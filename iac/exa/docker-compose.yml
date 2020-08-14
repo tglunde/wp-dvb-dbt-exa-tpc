@@ -1,0 +1,22 @@
+version: '3.3'
+
+# datavaultbuilder version is defined as DVB_TAG in the file '.env'
+
+services:
+
+  exasol:
+    image: 'exasol/docker-db:6.2.6-d1'
+    volumes:
+            - mydata:/exa
+    ports:
+      - '8888:8888'
+      - '8443:443'
+    privileged: true
+
+volumes:
+  mydata:
+    driver: local
+    driver_opts:
+        type: none
+        device: ./data 
+        o: bind

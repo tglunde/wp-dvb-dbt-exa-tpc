@@ -1,0 +1,18 @@
+
+# For more information on how to configure this file, please see:
+# https://docs.getdbt.com/docs/profile
+
+dbt:
+  target: dev
+  outputs:
+    dev:
+      type: exasol
+      threads: 1
+      dsn: localhost:8888
+      user: sys
+      pass: exasol
+      dbname: dbt
+      schema: dbt
+
+config:
+  send_anonymous_usage_stats: False

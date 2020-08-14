@@ -1,0 +1,133 @@
+version: '3.5'
+
+services:
+ core:
+   env_file: .env
+   environment:
+     - 'CLIENT_DB_CONNECTIONSTRING=jdbc:exa:localhost:8888'
+     - CLIENT_DB_TYPE=exasol_client_db
+     - ENABLE_BETA_FEATURES=false
+     - 'USE_UNSECURE_DEFAULT_ENCRYPTION_KEYS=false'
+     - 'PLJAVA_VMOPTIONS=-Djava.security.egd=file:///dev/urandom -Xms128M -Xss2M'
+     - DOWNLOAD_DEMO_DATA=true
+     - 'GUI_USER_NAME=dvb'
+     - 'GUI_USER_PASSWORD=start123'
+     - 'GUI_USER_GROUP=dvb_admin'
+     - 'GUI_USER_EMAIL=your@mail.com'
+   image: 'datavaultbuilder/core:${DVB_TAG}'
+   volumes:
+     - files:/files
+   secrets:
+     - systems_password_public_key
+     - systems_password_private_key
+     - systems_password_private_key_password
+     - core_dbadmin_password
+     - authenticator_password
+     - scheduler_password
+     - datavault_builder_license
+   networks:
+     dvbnet2:
+   restart: always
+
+ connection_pool:
+   env_file: .env
+   environment:
+     - CORE_POOL_MAX_CONNECTIONS=20
+     - CLIENTDB_POOL_MAX_CONNECTIONS=20
+     #- 'JAVA_OPTS=-Dnet.snowflake.jdbc.loggerImpl=net.snowflake.client.log.SLF4JLogger'
+     #- METRICS_PROVIDER=micrometer-prometheus
+   image: 'datavaultbuilder/connection_pool:${DVB_TAG}'
+   volumes:
+     - files:/files
+     - pddb:/opt/datavaultbuilder/var/lib/pddb
+   secrets:
+     - systems_password_public_key
+     - systems_password_private_key
+     - systems_password_private_key_password
+     - core_dbadmin_password
+     - authenticator_password
+   networks:
+     dvbnet2:
+       aliases:
+         - connectionpool
+   restart: always       
+
+ webgui:
+   env_file: .env
+   environment:
+     - 'DAV_USER=dvb'
+     - 'DAV_PASSWORD=start123'
+     - DISABLE_IPV6=false
+   image: 'datavaultbuilder/webgui:${DVB_TAG}'
+   ports:
+     - '9998:80'
+       #     - '443:443'
+       #   secrets:
+           #     - ssl_fullchain
+           #     - ssl_private_key
+   volumes:
+     - files:/files    
+   networks:
+     dvbnet2:
+   restart: always
+
+ scheduler:
+   env_file: .env
+   environment:
+     - MAX_SERVICE_CONNECTION_AGE=3600
+     - 'PGAGENT_OPTIONS=-l 2'
+   image: 'datavaultbuilder/scheduler:${DVB_TAG}'
+   secrets:
+     - scheduler_password    
+   networks:
+     dvbnet2:
+   restart: always
+
+ api:
+   env_file: .env
+   environment:
+     - CONNECTION_POOL=30
+   image: 'datavaultbuilder/api:${DVB_TAG}'
+   secrets:
+     - authenticator_password
+     - core_dbadmin_password    
+   networks:
+     dvbnet2:
+   restart: always
+
+secrets:
+   systems_password_public_key:
+     file: secrets/systems_password_public_key.txt
+   systems_password_private_key:
+     file: secrets/systems_password_private_key.txt
+   systems_password_private_key_password:
+     file: secrets/systems_password_private_key_password.txt
+   core_dbadmin_password:
+     file: secrets/core_dbadmin_password.txt
+   authenticator_password:
+     file: secrets/authenticator_password.txt
+   scheduler_password:
+     file: secrets/scheduler_password.txt
+   datavault_builder_license:
+     file: datavault_builder_license.lic
+   ssl_fullchain:
+     file: secrets/ssl-fullchain.pem
+   ssl_private_key:
+     file: secrets/domain-com-key.pem  
+   scheduler_password:
+     file: secrets/scheduler_password.txt     
+   authenticator_password:
+     file: secrets/authenticator_password.txt
+   core_dbadmin_password:
+     file: secrets/core_dbadmin_password.txt     
+
+volumes:
+   files:
+   pddb:
+
+networks:
+   dvbnet2:
+      driver: bridge
+      ipam:
+         driver: default
+
