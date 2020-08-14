@@ -1,0 +1,33 @@
+{
+	"deployable": true,
+	"hidden_in_system_deployment": false,
+	"source_type_id": "snowflake",
+	"source_type_name": "Snowflake Server",
+	"source_type_parameters": [
+		{
+			"source_type_parameter_id": "accountname",
+			"source_type_parameter_value": "alligator.eu-central-1"
+		},
+		{
+			"source_type_parameter_id": "database",
+			"source_type_parameter_value": "TEST_DB"
+		},
+		{
+			"source_type_parameter_id": "warehouse",
+			"source_type_parameter_value": "WH_COVID19"
+		},
+		{
+			"source_type_parameter_id": "username",
+			"source_type_parameter_value": "tglunde"
+		},
+		{
+			"source_type_parameter_id": "password",
+			"source_type_parameter_value": "<***Insert password here***>"
+		}
+	],
+	"source_type_url": "jdbc:snowflake://alligator.eu-central-1.snowflakecomputing.com/?db=TEST_DB&warehouse=WH_COVID19&CLIENT_METADATA_REQUEST_USE_CONNECTION_CTX=true",
+	"system_color": "#990000",
+	"system_comment": "Performance test data",
+	"system_id": "TPCH",
+	"system_name": "TPCH"
+}

@@ -1,0 +1,18 @@
+{
+	"datavault_key_type": "hash_bytea",
+	"datavault_load_commit_batches": "TRUE",
+	"datavault_load_sat_batch_size": "10000000",
+	"datavault_load_sat_in_batches": "TRUE",
+	"datavault_preload_parent": "TRUE",
+	"default_loading_batch_size": "50000",
+	"default_staging_load_log_progress_update_size": "10000",
+	"include_in_accesslayer_default": "FALSE",
+	"max_parallel_loads": "5",
+	"max_parallel_loads_from_staging_table": "-1",
+	"max_parallel_staging": "3",
+	"run_job_sql_query_on_core": "TRUE",
+	"staging_load_async": "TRUE",
+	"transaction_link_fk_constraints": "TRUE",
+	"transaction_link_parent_hub_constraints": "TRUE",
+	"use_bulk_copy_on_mssql": "TRUE"
+}
