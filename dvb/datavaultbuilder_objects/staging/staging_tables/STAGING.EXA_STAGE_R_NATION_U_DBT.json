@@ -1,0 +1,74 @@
+{
+	"columns": [
+		{
+			"column_comment": null,
+			"column_id": "STAGING.EXA_STAGE_R_NATION_U_DBT.N_NATIONKEY",
+			"column_name": "N_NATIONKEY",
+			"column_order": 1,
+			"complete_data_type": "DECIMAL(18,0)",
+			"jdbc_data_type": {
+				"character_maximum_length": 18,
+				"data_type_name": "DECIMAL",
+				"jdbc_data_type_id": 2,
+				"numeric_precision": 18,
+				"numeric_scale": 0
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.EXA_STAGE_R_NATION_U_DBT.N_NAME",
+			"column_name": "N_NAME",
+			"column_order": 2,
+			"complete_data_type": "VARCHAR(2000000) UTF8",
+			"jdbc_data_type": {
+				"character_maximum_length": 2000000,
+				"data_type_name": "VARCHAR UTF8",
+				"jdbc_data_type_id": 12,
+				"numeric_precision": null,
+				"numeric_scale": null
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.EXA_STAGE_R_NATION_U_DBT.N_REGIONKEY",
+			"column_name": "N_REGIONKEY",
+			"column_order": 3,
+			"complete_data_type": "DECIMAL(18,0)",
+			"jdbc_data_type": {
+				"character_maximum_length": 18,
+				"data_type_name": "DECIMAL",
+				"jdbc_data_type_id": 2,
+				"numeric_precision": 18,
+				"numeric_scale": 0
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.EXA_STAGE_R_NATION_U_DBT.N_COMMENT",
+			"column_name": "N_COMMENT",
+			"column_order": 4,
+			"complete_data_type": "VARCHAR(2000000) UTF8",
+			"jdbc_data_type": {
+				"character_maximum_length": 2000000,
+				"data_type_name": "VARCHAR UTF8",
+				"jdbc_data_type_id": 12,
+				"numeric_precision": null,
+				"numeric_scale": null
+			}
+		}
+	],
+	"loading_batch_size": 50000,
+	"source_schema_name": "DBT",
+	"source_schema_or_system_id": "DBT",
+	"source_table_id": "DBT.NATION",
+	"source_table_name": "NATION",
+	"source_table_staging_id": "NATION",
+	"source_table_type_id": "TABLE",
+	"staging_table_comment": "",
+	"staging_table_display_string": "Nation (DBT) [EXA_STAGE_R_NATION_U_DBT]",
+	"staging_table_id": "STAGING.EXA_STAGE_R_NATION_U_DBT",
+	"staging_table_name": "Nation",
+	"system_id": "EXA_STAGE",
+	"where_clause_delta_part_template": "",
+	"where_clause_general_part": ""
+}

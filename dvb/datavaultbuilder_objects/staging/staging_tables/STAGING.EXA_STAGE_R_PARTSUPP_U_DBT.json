@@ -1,0 +1,88 @@
+{
+	"columns": [
+		{
+			"column_comment": null,
+			"column_id": "STAGING.EXA_STAGE_R_PARTSUPP_U_DBT.PS_PARTKEY",
+			"column_name": "PS_PARTKEY",
+			"column_order": 1,
+			"complete_data_type": "DECIMAL(18,0)",
+			"jdbc_data_type": {
+				"character_maximum_length": 18,
+				"data_type_name": "DECIMAL",
+				"jdbc_data_type_id": 2,
+				"numeric_precision": 18,
+				"numeric_scale": 0
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.EXA_STAGE_R_PARTSUPP_U_DBT.PS_SUPPKEY",
+			"column_name": "PS_SUPPKEY",
+			"column_order": 2,
+			"complete_data_type": "DECIMAL(18,0)",
+			"jdbc_data_type": {
+				"character_maximum_length": 18,
+				"data_type_name": "DECIMAL",
+				"jdbc_data_type_id": 2,
+				"numeric_precision": 18,
+				"numeric_scale": 0
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.EXA_STAGE_R_PARTSUPP_U_DBT.PS_AVAILQTY",
+			"column_name": "PS_AVAILQTY",
+			"column_order": 3,
+			"complete_data_type": "DECIMAL(18,0)",
+			"jdbc_data_type": {
+				"character_maximum_length": 18,
+				"data_type_name": "DECIMAL",
+				"jdbc_data_type_id": 2,
+				"numeric_precision": 18,
+				"numeric_scale": 0
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.EXA_STAGE_R_PARTSUPP_U_DBT.PS_SUPPLYCOST",
+			"column_name": "PS_SUPPLYCOST",
+			"column_order": 4,
+			"complete_data_type": "DOUBLE PRECISION",
+			"jdbc_data_type": {
+				"character_maximum_length": 64,
+				"data_type_name": "DOUBLE PRECISION",
+				"jdbc_data_type_id": 8,
+				"numeric_precision": null,
+				"numeric_scale": null
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.EXA_STAGE_R_PARTSUPP_U_DBT.PS_COMMENT",
+			"column_name": "PS_COMMENT",
+			"column_order": 5,
+			"complete_data_type": "VARCHAR(2000000) UTF8",
+			"jdbc_data_type": {
+				"character_maximum_length": 2000000,
+				"data_type_name": "VARCHAR UTF8",
+				"jdbc_data_type_id": 12,
+				"numeric_precision": null,
+				"numeric_scale": null
+			}
+		}
+	],
+	"loading_batch_size": 50000,
+	"source_schema_name": "DBT",
+	"source_schema_or_system_id": "DBT",
+	"source_table_id": "DBT.PARTSUPP",
+	"source_table_name": "PARTSUPP",
+	"source_table_staging_id": "PARTSUPP",
+	"source_table_type_id": "TABLE",
+	"staging_table_comment": "",
+	"staging_table_display_string": "Partsupp (DBT) [EXA_STAGE_R_PARTSUPP_U_DBT]",
+	"staging_table_id": "STAGING.EXA_STAGE_R_PARTSUPP_U_DBT",
+	"staging_table_name": "Partsupp",
+	"system_id": "EXA_STAGE",
+	"where_clause_delta_part_template": "",
+	"where_clause_general_part": ""
+}

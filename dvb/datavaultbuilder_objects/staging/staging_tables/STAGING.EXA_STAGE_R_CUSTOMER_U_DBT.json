@@ -1,0 +1,130 @@
+{
+	"columns": [
+		{
+			"column_comment": null,
+			"column_id": "STAGING.EXA_STAGE_R_CUSTOMER_U_DBT.C_CUSTKEY",
+			"column_name": "C_CUSTKEY",
+			"column_order": 1,
+			"complete_data_type": "DECIMAL(18,0)",
+			"jdbc_data_type": {
+				"character_maximum_length": 18,
+				"data_type_name": "DECIMAL",
+				"jdbc_data_type_id": 2,
+				"numeric_precision": 18,
+				"numeric_scale": 0
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.EXA_STAGE_R_CUSTOMER_U_DBT.C_NAME",
+			"column_name": "C_NAME",
+			"column_order": 2,
+			"complete_data_type": "VARCHAR(2000000) UTF8",
+			"jdbc_data_type": {
+				"character_maximum_length": 2000000,
+				"data_type_name": "VARCHAR UTF8",
+				"jdbc_data_type_id": 12,
+				"numeric_precision": null,
+				"numeric_scale": null
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.EXA_STAGE_R_CUSTOMER_U_DBT.C_ADDRESS",
+			"column_name": "C_ADDRESS",
+			"column_order": 3,
+			"complete_data_type": "VARCHAR(2000000) UTF8",
+			"jdbc_data_type": {
+				"character_maximum_length": 2000000,
+				"data_type_name": "VARCHAR UTF8",
+				"jdbc_data_type_id": 12,
+				"numeric_precision": null,
+				"numeric_scale": null
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.EXA_STAGE_R_CUSTOMER_U_DBT.C_NATIONKEY",
+			"column_name": "C_NATIONKEY",
+			"column_order": 4,
+			"complete_data_type": "DECIMAL(18,0)",
+			"jdbc_data_type": {
+				"character_maximum_length": 18,
+				"data_type_name": "DECIMAL",
+				"jdbc_data_type_id": 2,
+				"numeric_precision": 18,
+				"numeric_scale": 0
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.EXA_STAGE_R_CUSTOMER_U_DBT.C_PHONE",
+			"column_name": "C_PHONE",
+			"column_order": 5,
+			"complete_data_type": "VARCHAR(2000000) UTF8",
+			"jdbc_data_type": {
+				"character_maximum_length": 2000000,
+				"data_type_name": "VARCHAR UTF8",
+				"jdbc_data_type_id": 12,
+				"numeric_precision": null,
+				"numeric_scale": null
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.EXA_STAGE_R_CUSTOMER_U_DBT.C_ACCTBAL",
+			"column_name": "C_ACCTBAL",
+			"column_order": 6,
+			"complete_data_type": "DOUBLE PRECISION",
+			"jdbc_data_type": {
+				"character_maximum_length": 64,
+				"data_type_name": "DOUBLE PRECISION",
+				"jdbc_data_type_id": 8,
+				"numeric_precision": null,
+				"numeric_scale": null
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.EXA_STAGE_R_CUSTOMER_U_DBT.C_MKTSEGMENT",
+			"column_name": "C_MKTSEGMENT",
+			"column_order": 7,
+			"complete_data_type": "VARCHAR(2000000) UTF8",
+			"jdbc_data_type": {
+				"character_maximum_length": 2000000,
+				"data_type_name": "VARCHAR UTF8",
+				"jdbc_data_type_id": 12,
+				"numeric_precision": null,
+				"numeric_scale": null
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.EXA_STAGE_R_CUSTOMER_U_DBT.C_COMMENT",
+			"column_name": "C_COMMENT",
+			"column_order": 8,
+			"complete_data_type": "VARCHAR(2000000) UTF8",
+			"jdbc_data_type": {
+				"character_maximum_length": 2000000,
+				"data_type_name": "VARCHAR UTF8",
+				"jdbc_data_type_id": 12,
+				"numeric_precision": null,
+				"numeric_scale": null
+			}
+		}
+	],
+	"loading_batch_size": 50000,
+	"source_schema_name": "DBT",
+	"source_schema_or_system_id": "DBT",
+	"source_table_id": "DBT.CUSTOMER",
+	"source_table_name": "CUSTOMER",
+	"source_table_staging_id": "CUSTOMER",
+	"source_table_type_id": "TABLE",
+	"staging_table_comment": "",
+	"staging_table_display_string": "Customer (DBT) [EXA_STAGE_R_CUSTOMER_U_DBT]",
+	"staging_table_id": "STAGING.EXA_STAGE_R_CUSTOMER_U_DBT",
+	"staging_table_name": "Customer",
+	"system_id": "EXA_STAGE",
+	"where_clause_delta_part_template": "",
+	"where_clause_general_part": ""
+}

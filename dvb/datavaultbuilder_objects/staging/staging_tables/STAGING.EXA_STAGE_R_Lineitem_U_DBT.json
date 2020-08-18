@@ -2,119 +2,119 @@
 	"columns": [
 		{
 			"column_comment": null,
-			"column_id": "STAGING.TPCH_R_SAMPLE_LINEITEM_U_PUBLIC.L_ORDERKEY",
+			"column_id": "STAGING.EXA_STAGE_R_Lineitem_U_DBT.L_ORDERKEY",
 			"column_name": "L_ORDERKEY",
 			"column_order": 1,
-			"complete_data_type": "DECIMAL(36,0)",
+			"complete_data_type": "DECIMAL(18,0)",
 			"jdbc_data_type": {
-				"character_maximum_length": 36,
+				"character_maximum_length": 18,
 				"data_type_name": "DECIMAL",
 				"jdbc_data_type_id": 2,
-				"numeric_precision": 36,
+				"numeric_precision": 18,
 				"numeric_scale": 0
 			}
 		},
 		{
 			"column_comment": null,
-			"column_id": "STAGING.TPCH_R_SAMPLE_LINEITEM_U_PUBLIC.L_PARTKEY",
+			"column_id": "STAGING.EXA_STAGE_R_Lineitem_U_DBT.L_PARTKEY",
 			"column_name": "L_PARTKEY",
 			"column_order": 2,
-			"complete_data_type": "DECIMAL(36,0)",
+			"complete_data_type": "DECIMAL(18,0)",
 			"jdbc_data_type": {
-				"character_maximum_length": 36,
+				"character_maximum_length": 18,
 				"data_type_name": "DECIMAL",
 				"jdbc_data_type_id": 2,
-				"numeric_precision": 36,
+				"numeric_precision": 18,
 				"numeric_scale": 0
 			}
 		},
 		{
 			"column_comment": null,
-			"column_id": "STAGING.TPCH_R_SAMPLE_LINEITEM_U_PUBLIC.L_SUPPKEY",
+			"column_id": "STAGING.EXA_STAGE_R_Lineitem_U_DBT.L_SUPPKEY",
 			"column_name": "L_SUPPKEY",
 			"column_order": 3,
-			"complete_data_type": "DECIMAL(36,0)",
+			"complete_data_type": "DECIMAL(18,0)",
 			"jdbc_data_type": {
-				"character_maximum_length": 36,
+				"character_maximum_length": 18,
 				"data_type_name": "DECIMAL",
 				"jdbc_data_type_id": 2,
-				"numeric_precision": 36,
+				"numeric_precision": 18,
 				"numeric_scale": 0
 			}
 		},
 		{
 			"column_comment": null,
-			"column_id": "STAGING.TPCH_R_SAMPLE_LINEITEM_U_PUBLIC.L_LINENUMBER",
+			"column_id": "STAGING.EXA_STAGE_R_Lineitem_U_DBT.L_LINENUMBER",
 			"column_name": "L_LINENUMBER",
 			"column_order": 4,
-			"complete_data_type": "DECIMAL(36,0)",
+			"complete_data_type": "DECIMAL(18,0)",
 			"jdbc_data_type": {
-				"character_maximum_length": 36,
+				"character_maximum_length": 18,
 				"data_type_name": "DECIMAL",
 				"jdbc_data_type_id": 2,
-				"numeric_precision": 36,
+				"numeric_precision": 18,
 				"numeric_scale": 0
 			}
 		},
 		{
 			"column_comment": null,
-			"column_id": "STAGING.TPCH_R_SAMPLE_LINEITEM_U_PUBLIC.L_QUANTITY",
+			"column_id": "STAGING.EXA_STAGE_R_Lineitem_U_DBT.L_QUANTITY",
 			"column_name": "L_QUANTITY",
 			"column_order": 5,
-			"complete_data_type": "DECIMAL(18,2)",
+			"complete_data_type": "DECIMAL(18,0)",
 			"jdbc_data_type": {
 				"character_maximum_length": 18,
 				"data_type_name": "DECIMAL",
 				"jdbc_data_type_id": 2,
 				"numeric_precision": 18,
-				"numeric_scale": 2
+				"numeric_scale": 0
 			}
 		},
 		{
 			"column_comment": null,
-			"column_id": "STAGING.TPCH_R_SAMPLE_LINEITEM_U_PUBLIC.L_EXTENDEDPRICE",
+			"column_id": "STAGING.EXA_STAGE_R_Lineitem_U_DBT.L_EXTENDEDPRICE",
 			"column_name": "L_EXTENDEDPRICE",
 			"column_order": 6,
-			"complete_data_type": "DECIMAL(18,2)",
+			"complete_data_type": "DOUBLE PRECISION",
 			"jdbc_data_type": {
-				"character_maximum_length": 18,
-				"data_type_name": "DECIMAL",
-				"jdbc_data_type_id": 2,
-				"numeric_precision": 18,
-				"numeric_scale": 2
+				"character_maximum_length": 64,
+				"data_type_name": "DOUBLE PRECISION",
+				"jdbc_data_type_id": 8,
+				"numeric_precision": null,
+				"numeric_scale": null
 			}
 		},
 		{
 			"column_comment": null,
-			"column_id": "STAGING.TPCH_R_SAMPLE_LINEITEM_U_PUBLIC.L_DISCOUNT",
+			"column_id": "STAGING.EXA_STAGE_R_Lineitem_U_DBT.L_DISCOUNT",
 			"column_name": "L_DISCOUNT",
 			"column_order": 7,
-			"complete_data_type": "DECIMAL(18,2)",
+			"complete_data_type": "DOUBLE PRECISION",
 			"jdbc_data_type": {
-				"character_maximum_length": 18,
-				"data_type_name": "DECIMAL",
-				"jdbc_data_type_id": 2,
-				"numeric_precision": 18,
-				"numeric_scale": 2
+				"character_maximum_length": 64,
+				"data_type_name": "DOUBLE PRECISION",
+				"jdbc_data_type_id": 8,
+				"numeric_precision": null,
+				"numeric_scale": null
 			}
 		},
 		{
 			"column_comment": null,
-			"column_id": "STAGING.TPCH_R_SAMPLE_LINEITEM_U_PUBLIC.L_TAX",
+			"column_id": "STAGING.EXA_STAGE_R_Lineitem_U_DBT.L_TAX",
 			"column_name": "L_TAX",
 			"column_order": 8,
-			"complete_data_type": "DECIMAL(18,2)",
+			"complete_data_type": "DOUBLE PRECISION",
 			"jdbc_data_type": {
-				"character_maximum_length": 18,
-				"data_type_name": "DECIMAL",
-				"jdbc_data_type_id": 2,
-				"numeric_precision": 18,
-				"numeric_scale": 2
+				"character_maximum_length": 64,
+				"data_type_name": "DOUBLE PRECISION",
+				"jdbc_data_type_id": 8,
+				"numeric_precision": null,
+				"numeric_scale": null
 			}
 		},
 		{
 			"column_comment": null,
-			"column_id": "STAGING.TPCH_R_SAMPLE_LINEITEM_U_PUBLIC.L_RETURNFLAG",
+			"column_id": "STAGING.EXA_STAGE_R_Lineitem_U_DBT.L_RETURNFLAG",
 			"column_name": "L_RETURNFLAG",
 			"column_order": 9,
 			"complete_data_type": "VARCHAR(2000000) UTF8",
@@ -128,7 +128,7 @@
 		},
 		{
 			"column_comment": null,
-			"column_id": "STAGING.TPCH_R_SAMPLE_LINEITEM_U_PUBLIC.L_LINESTATUS",
+			"column_id": "STAGING.EXA_STAGE_R_Lineitem_U_DBT.L_LINESTATUS",
 			"column_name": "L_LINESTATUS",
 			"column_order": 10,
 			"complete_data_type": "VARCHAR(2000000) UTF8",
@@ -142,7 +142,7 @@
 		},
 		{
 			"column_comment": null,
-			"column_id": "STAGING.TPCH_R_SAMPLE_LINEITEM_U_PUBLIC.L_SHIPDATE",
+			"column_id": "STAGING.EXA_STAGE_R_Lineitem_U_DBT.L_SHIPDATE",
 			"column_name": "L_SHIPDATE",
 			"column_order": 11,
 			"complete_data_type": "DATE",
@@ -156,7 +156,7 @@
 		},
 		{
 			"column_comment": null,
-			"column_id": "STAGING.TPCH_R_SAMPLE_LINEITEM_U_PUBLIC.L_COMMITDATE",
+			"column_id": "STAGING.EXA_STAGE_R_Lineitem_U_DBT.L_COMMITDATE",
 			"column_name": "L_COMMITDATE",
 			"column_order": 12,
 			"complete_data_type": "DATE",
@@ -170,7 +170,7 @@
 		},
 		{
 			"column_comment": null,
-			"column_id": "STAGING.TPCH_R_SAMPLE_LINEITEM_U_PUBLIC.L_RECEIPTDATE",
+			"column_id": "STAGING.EXA_STAGE_R_Lineitem_U_DBT.L_RECEIPTDATE",
 			"column_name": "L_RECEIPTDATE",
 			"column_order": 13,
 			"complete_data_type": "DATE",
@@ -184,7 +184,7 @@
 		},
 		{
 			"column_comment": null,
-			"column_id": "STAGING.TPCH_R_SAMPLE_LINEITEM_U_PUBLIC.L_SHIPINSTRUCT",
+			"column_id": "STAGING.EXA_STAGE_R_Lineitem_U_DBT.L_SHIPINSTRUCT",
 			"column_name": "L_SHIPINSTRUCT",
 			"column_order": 14,
 			"complete_data_type": "VARCHAR(2000000) UTF8",
@@ -198,7 +198,7 @@
 		},
 		{
 			"column_comment": null,
-			"column_id": "STAGING.TPCH_R_SAMPLE_LINEITEM_U_PUBLIC.L_SHIPMODE",
+			"column_id": "STAGING.EXA_STAGE_R_Lineitem_U_DBT.L_SHIPMODE",
 			"column_name": "L_SHIPMODE",
 			"column_order": 15,
 			"complete_data_type": "VARCHAR(2000000) UTF8",
@@ -212,7 +212,7 @@
 		},
 		{
 			"column_comment": null,
-			"column_id": "STAGING.TPCH_R_SAMPLE_LINEITEM_U_PUBLIC.L_COMMENT",
+			"column_id": "STAGING.EXA_STAGE_R_Lineitem_U_DBT.L_COMMENT",
 			"column_name": "L_COMMENT",
 			"column_order": 16,
 			"complete_data_type": "VARCHAR(2000000) UTF8",
@@ -226,17 +226,17 @@
 		}
 	],
 	"loading_batch_size": 50000,
-	"source_schema_name": "PUBLIC",
-	"source_schema_or_system_id": "PUBLIC",
-	"source_table_id": "PUBLIC.SAMPLE_LINEITEM",
-	"source_table_name": "SAMPLE_LINEITEM",
-	"source_table_staging_id": "SAMPLE_LINEITEM",
-	"source_table_type_id": "VIEW",
+	"source_schema_name": "DBT",
+	"source_schema_or_system_id": "DBT",
+	"source_table_id": "DBT.LINEITEM",
+	"source_table_name": "LINEITEM",
+	"source_table_staging_id": "Lineitem",
+	"source_table_type_id": "TABLE",
 	"staging_table_comment": "",
-	"staging_table_display_string": "Sample Lineitem (PUBLIC) [TPCH_R_SAMPLE_LINEITEM_U_PUBLIC]",
-	"staging_table_id": "STAGING.TPCH_R_SAMPLE_LINEITEM_U_PUBLIC",
-	"staging_table_name": "Sample Lineitem",
-	"system_id": "TPCH",
+	"staging_table_display_string": "Lineitem (DBT) [EXA_STAGE_R_Lineitem_U_DBT]",
+	"staging_table_id": "STAGING.EXA_STAGE_R_Lineitem_U_DBT",
+	"staging_table_name": "Lineitem",
+	"system_id": "EXA_STAGE",
 	"where_clause_delta_part_template": "",
 	"where_clause_general_part": ""
 }

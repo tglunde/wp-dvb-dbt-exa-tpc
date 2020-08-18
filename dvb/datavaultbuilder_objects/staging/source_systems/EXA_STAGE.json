@@ -1,0 +1,29 @@
+{
+	"deployable": true,
+	"hidden_in_system_deployment": false,
+	"source_type_id": "exasol",
+	"source_type_name": "Exasol Server",
+	"source_type_parameters": [
+		{
+			"source_type_parameter_id": "host",
+			"source_type_parameter_value": "172.22.176.1"
+		},
+		{
+			"source_type_parameter_id": "port",
+			"source_type_parameter_value": "8888"
+		},
+		{
+			"source_type_parameter_id": "username",
+			"source_type_parameter_value": "sys"
+		},
+		{
+			"source_type_parameter_id": "password",
+			"source_type_parameter_value": "<***Insert password here***>"
+		}
+	],
+	"source_type_url": "jdbc:exa:172.22.176.1:8888",
+	"system_color": "#990000",
+	"system_comment": "Exasol stage area",
+	"system_id": "EXA_STAGE",
+	"system_name": "Exa_stage"
+}
