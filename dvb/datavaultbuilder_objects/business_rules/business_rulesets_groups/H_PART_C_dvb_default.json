@@ -1,0 +1,12 @@
+{
+	"business_rules_businessobject_container_display_name": "Part",
+	"business_rules_businessobject_container_id": "H_PART_C_dvb_default",
+	"business_rules_businessobject_container_order": 5,
+	"business_rules_businessobject_systems": [
+		{
+			"related_businessobject_view_id": "BUSINESSOBJECTS.PART_S_EXA_STAGE",
+			"system_id": "EXA_STAGE",
+			"system_order": 1
+		}
+	]
+}

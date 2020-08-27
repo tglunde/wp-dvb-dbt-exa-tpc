@@ -1,0 +1,142 @@
+{
+	"businessobject_comment": "",
+	"businessobject_display_name": "Order > Exa_stage > Default",
+	"businessobject_dropdown_entry_string": "Order",
+	"businessobject_elements": [
+		{
+			"columns": [
+				{
+					"column_comment": "Business Key for Hub Order",
+					"column_id": "DATAVAULT.H_ORDER.ORDER_BK",
+					"column_name": "Business Key for Hub Order",
+					"column_name_detail": "ORDER_BK",
+					"column_nq_id": "ORDER_BK",
+					"column_order": 1,
+					"column_orig_name": "Business Key for Hub Order",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_ORDER\"}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_ORDER_S_EXA_STAGE_R_ORDERS_U_DBT_C.O_ORDERKEY",
+					"column_name": "O_ORDERKEY",
+					"column_name_detail": "",
+					"column_nq_id": "O_ORDERKEY",
+					"column_order": 2,
+					"column_orig_name": "O_ORDERKEY",
+					"complete_data_type": "DECIMAL(18,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_ORDER_S_EXA_STAGE_R_ORDERS_U_DBT_C.O_CUSTKEY",
+					"column_name": "O_CUSTKEY",
+					"column_name_detail": "",
+					"column_nq_id": "O_CUSTKEY",
+					"column_order": 3,
+					"column_orig_name": "O_CUSTKEY",
+					"complete_data_type": "DECIMAL(18,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_ORDER_S_EXA_STAGE_R_ORDERS_U_DBT_C.O_ORDERSTATUS",
+					"column_name": "O_ORDERSTATUS",
+					"column_name_detail": "",
+					"column_nq_id": "O_ORDERSTATUS",
+					"column_order": 4,
+					"column_orig_name": "O_ORDERSTATUS",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_ORDER_S_EXA_STAGE_R_ORDERS_U_DBT_C.O_TOTALPRICE",
+					"column_name": "O_TOTALPRICE",
+					"column_name_detail": "",
+					"column_nq_id": "O_TOTALPRICE",
+					"column_order": 5,
+					"column_orig_name": "O_TOTALPRICE",
+					"complete_data_type": "DOUBLE PRECISION",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_ORDER_S_EXA_STAGE_R_ORDERS_U_DBT_C.O_ORDERDATE",
+					"column_name": "O_ORDERDATE",
+					"column_name_detail": "",
+					"column_nq_id": "O_ORDERDATE",
+					"column_order": 6,
+					"column_orig_name": "O_ORDERDATE",
+					"complete_data_type": "DATE",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_ORDER_S_EXA_STAGE_R_ORDERS_U_DBT_C.O_ORDERPRIORITY",
+					"column_name": "O_ORDERPRIORITY",
+					"column_name_detail": "",
+					"column_nq_id": "O_ORDERPRIORITY",
+					"column_order": 7,
+					"column_orig_name": "O_ORDERPRIORITY",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_ORDER_S_EXA_STAGE_R_ORDERS_U_DBT_C.O_CLERK",
+					"column_name": "O_CLERK",
+					"column_name_detail": "",
+					"column_nq_id": "O_CLERK",
+					"column_order": 8,
+					"column_orig_name": "O_CLERK",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_ORDER_S_EXA_STAGE_R_ORDERS_U_DBT_C.O_SHIPPRIORITY",
+					"column_name": "O_SHIPPRIORITY",
+					"column_name_detail": "",
+					"column_nq_id": "O_SHIPPRIORITY",
+					"column_order": 9,
+					"column_orig_name": "O_SHIPPRIORITY",
+					"complete_data_type": "DECIMAL(18,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_ORDER_S_EXA_STAGE_R_ORDERS_U_DBT_C.O_COMMENT",
+					"column_name": "O_COMMENT",
+					"column_name_detail": "",
+					"column_nq_id": "O_COMMENT",
+					"column_order": 10,
+					"column_orig_name": "O_COMMENT",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_ORDER\",\"satellites\":[{\"satellite_id\":\"S_ORDER_S_EXA_STAGE_R_ORDERS_U_DBT\"}]}]}}"
+		}
+	],
+	"businessobject_set_id": "businessobject_set_H_ORDER",
+	"businessobject_structure": null,
+	"businessobject_view_id": "BUSINESSOBJECTS.ORDER_S_EXA_STAGE",
+	"dependent_objects": [
+		{
+			"object_id": "H_ORDER",
+			"object_type": "hub"
+		},
+		{
+			"object_id": "S_ORDER_S_EXA_STAGE_R_ORDERS_U_DBT",
+			"object_type": "satellite"
+		}
+	],
+	"granularity_satellite_id": "S_ORDER_S_EXA_STAGE_R_ORDERS_U_DBT",
+	"system_id": "EXA_STAGE",
+	"system_name": "Exa_stage"
+}

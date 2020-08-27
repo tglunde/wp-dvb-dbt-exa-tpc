@@ -1,0 +1,19 @@
+{
+	"business_key_prefix": "",
+	"business_key_short": "S_SUPPKEY",
+	"column_ids": [
+		{
+			"column_id": "STAGING.EXA_STAGE_R_SUPPLIER_U_DBT.S_SUPPKEY",
+			"column_order": 1
+		}
+	],
+	"datavault_category_id": "raw_vault",
+	"hub_id": "H_SUPPLIER",
+	"hub_load_display_name": "Exa_stage: SUPPLIER U DBT (S_SUPPKEY)",
+	"hub_load_id": "H_SUPPLIER_S_EXA_STAGE_R_SUPPLIER_U_DBT",
+	"keys_are_prehashed": false,
+	"keys_are_unique": true,
+	"staging_table_id": "STAGING.EXA_STAGE_R_SUPPLIER_U_DBT",
+	"system_id": "EXA_STAGE",
+	"system_name": "Exa_stage"
+}

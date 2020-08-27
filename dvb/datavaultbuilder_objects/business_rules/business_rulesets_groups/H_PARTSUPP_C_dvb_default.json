@@ -1,0 +1,12 @@
+{
+	"business_rules_businessobject_container_display_name": "Partsupp",
+	"business_rules_businessobject_container_id": "H_PARTSUPP_C_dvb_default",
+	"business_rules_businessobject_container_order": 6,
+	"business_rules_businessobject_systems": [
+		{
+			"related_businessobject_view_id": "BUSINESSOBJECTS.PARTSUPP_S_EXA_STAGE",
+			"system_id": "EXA_STAGE",
+			"system_order": 1
+		}
+	]
+}

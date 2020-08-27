@@ -1,0 +1,98 @@
+{
+	"businessobject_comment": "",
+	"businessobject_display_name": "Partsupp > Exa_stage > Default",
+	"businessobject_dropdown_entry_string": "Partsupp",
+	"businessobject_elements": [
+		{
+			"columns": [
+				{
+					"column_comment": "Business Key for Hub Partsupp",
+					"column_id": "DATAVAULT.H_PARTSUPP.PARTSUPP_BK",
+					"column_name": "Business Key for Hub Partsupp",
+					"column_name_detail": "PARTSUPP_BK",
+					"column_nq_id": "PARTSUPP_BK",
+					"column_order": 1,
+					"column_orig_name": "Business Key for Hub Partsupp",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_PARTSUPP\"}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_PARTSUPP_S_EXA_STAGE_R_PARTSUPP_U_DBT_C.PS_PARTKEY",
+					"column_name": "PS_PARTKEY",
+					"column_name_detail": "",
+					"column_nq_id": "PS_PARTKEY",
+					"column_order": 2,
+					"column_orig_name": "PS_PARTKEY",
+					"complete_data_type": "DECIMAL(18,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_PARTSUPP_S_EXA_STAGE_R_PARTSUPP_U_DBT_C.PS_SUPPKEY",
+					"column_name": "PS_SUPPKEY",
+					"column_name_detail": "",
+					"column_nq_id": "PS_SUPPKEY",
+					"column_order": 3,
+					"column_orig_name": "PS_SUPPKEY",
+					"complete_data_type": "DECIMAL(18,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_PARTSUPP_S_EXA_STAGE_R_PARTSUPP_U_DBT_C.PS_AVAILQTY",
+					"column_name": "PS_AVAILQTY",
+					"column_name_detail": "",
+					"column_nq_id": "PS_AVAILQTY",
+					"column_order": 4,
+					"column_orig_name": "PS_AVAILQTY",
+					"complete_data_type": "DECIMAL(18,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_PARTSUPP_S_EXA_STAGE_R_PARTSUPP_U_DBT_C.PS_SUPPLYCOST",
+					"column_name": "PS_SUPPLYCOST",
+					"column_name_detail": "",
+					"column_nq_id": "PS_SUPPLYCOST",
+					"column_order": 5,
+					"column_orig_name": "PS_SUPPLYCOST",
+					"complete_data_type": "DOUBLE PRECISION",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_PARTSUPP_S_EXA_STAGE_R_PARTSUPP_U_DBT_C.PS_COMMENT",
+					"column_name": "PS_COMMENT",
+					"column_name_detail": "",
+					"column_nq_id": "PS_COMMENT",
+					"column_order": 6,
+					"column_orig_name": "PS_COMMENT",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_PARTSUPP\",\"satellites\":[{\"satellite_id\":\"S_PARTSUPP_S_EXA_STAGE_R_PARTSUPP_U_DBT\"}]}]}}"
+		}
+	],
+	"businessobject_set_id": "businessobject_set_H_PARTSUPP",
+	"businessobject_structure": null,
+	"businessobject_view_id": "BUSINESSOBJECTS.PARTSUPP_S_EXA_STAGE",
+	"dependent_objects": [
+		{
+			"object_id": "H_PARTSUPP",
+			"object_type": "hub"
+		},
+		{
+			"object_id": "S_PARTSUPP_S_EXA_STAGE_R_PARTSUPP_U_DBT",
+			"object_type": "satellite"
+		}
+	],
+	"granularity_satellite_id": "S_PARTSUPP_S_EXA_STAGE_R_PARTSUPP_U_DBT",
+	"system_id": "EXA_STAGE",
+	"system_name": "Exa_stage"
+}

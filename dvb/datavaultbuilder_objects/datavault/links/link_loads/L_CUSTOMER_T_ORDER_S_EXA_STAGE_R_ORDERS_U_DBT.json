@@ -1,0 +1,7 @@
+{
+	"link_id": "L_CUSTOMER_T_ORDER",
+	"link_load_display_name": "Customer > Exa_stage: ORDERS U DBT (O_CUSTKEY) TO Order > Exa_stage: ORDERS U DBT (O_ORDERKEY)",
+	"link_load_id": "L_CUSTOMER_T_ORDER_S_EXA_STAGE_R_ORDERS_U_DBT",
+	"staging_table_id": "STAGING.EXA_STAGE_R_ORDERS_U_DBT",
+	"system_id": "EXA_STAGE"
+}

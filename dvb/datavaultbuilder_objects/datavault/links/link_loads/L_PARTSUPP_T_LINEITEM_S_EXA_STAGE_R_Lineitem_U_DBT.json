@@ -1,0 +1,7 @@
+{
+	"link_id": "L_PARTSUPP_T_LINEITEM",
+	"link_load_display_name": "Partsupp > Exa_stage: LINEITEM U DBT (L_PARTKEY, L_SUPPKEY) TO Lineitem > Exa_stage: LINEITEM U DBT (L_ORDERKEY, L_LINENUMBER)",
+	"link_load_id": "L_PARTSUPP_T_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT",
+	"staging_table_id": "STAGING.EXA_STAGE_R_Lineitem_U_DBT",
+	"system_id": "EXA_STAGE"
+}

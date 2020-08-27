@@ -1,0 +1,30 @@
+{
+	"accesslayer_priorization": 1,
+	"additional_deployment_parameters": {
+		"business_ruleset_hierarchy_level": 0
+	},
+	"business_rules_view_code": "CREATE VIEW BUSINESS_RULES.REGION_S_EXA_STAGE\nAS\n\n  SELECT \n    bo.\"Business Key for Hub Region\",    -- Business Key for Hub Region\n    bo.R_REGIONKEY,                    -- R_REGIONKEY from Satellite Region > Exa_stage > Default of REGION_U_DBT\n    bo.R_NAME,                         -- R_NAME from Satellite Region > Exa_stage > Default of REGION_U_DBT\n    bo.R_COMMENT                       -- R_COMMENT from Satellite Region > Exa_stage > Default of REGION_U_DBT\n\n  FROM BUSINESSOBJECTS.REGION_S_EXA_STAGE bo",
+	"business_ruleset_comment": "",
+	"business_ruleset_name": "Unaltered default",
+	"business_ruleset_order": 1,
+	"business_ruleset_suffix_id": null,
+	"business_ruleset_view_id": "BUSINESS_RULES.REGION_S_EXA_STAGE",
+	"container_id": "H_REGION_C_dvb_default",
+	"dependent_objects": [
+		{
+			"object_id": "BUSINESSOBJECTS.REGION_S_EXA_STAGE",
+			"object_type": "business_object"
+		}
+	],
+	"include_in_accesslayer": false,
+	"is_error_ruleset": false,
+	"is_unaltered_business_ruleset": true,
+	"quick_inserts": {
+		"quick_insert_list": [
+			{
+				"quick_insert_table_id": "BUSINESSOBJECTS.REGION_S_EXA_STAGE"
+			}
+		]
+	},
+	"system_id": "EXA_STAGE"
+}

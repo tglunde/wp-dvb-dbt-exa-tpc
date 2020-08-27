@@ -1,0 +1,219 @@
+{
+	"businessobject_comment": "",
+	"businessobject_display_name": "Lineitem > Exa_stage > Default",
+	"businessobject_dropdown_entry_string": "Lineitem",
+	"businessobject_elements": [
+		{
+			"columns": [
+				{
+					"column_comment": "Business Key for Hub Lineitem",
+					"column_id": "DATAVAULT.H_LINEITEM.LINEITEM_BK",
+					"column_name": "Business Key for Hub Lineitem",
+					"column_name_detail": "LINEITEM_BK",
+					"column_nq_id": "LINEITEM_BK",
+					"column_order": 1,
+					"column_orig_name": "Business Key for Hub Lineitem",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_LINEITEM\"}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT_C.L_ORDERKEY",
+					"column_name": "L_ORDERKEY",
+					"column_name_detail": "",
+					"column_nq_id": "L_ORDERKEY",
+					"column_order": 2,
+					"column_orig_name": "L_ORDERKEY",
+					"complete_data_type": "DECIMAL(18,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT_C.L_LINESTATUS",
+					"column_name": "L_LINESTATUS",
+					"column_name_detail": "",
+					"column_nq_id": "L_LINESTATUS",
+					"column_order": 3,
+					"column_orig_name": "L_LINESTATUS",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT_C.L_SHIPDATE",
+					"column_name": "L_SHIPDATE",
+					"column_name_detail": "",
+					"column_nq_id": "L_SHIPDATE",
+					"column_order": 4,
+					"column_orig_name": "L_SHIPDATE",
+					"complete_data_type": "DATE",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT_C.L_COMMITDATE",
+					"column_name": "L_COMMITDATE",
+					"column_name_detail": "",
+					"column_nq_id": "L_COMMITDATE",
+					"column_order": 5,
+					"column_orig_name": "L_COMMITDATE",
+					"complete_data_type": "DATE",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT_C.L_RECEIPTDATE",
+					"column_name": "L_RECEIPTDATE",
+					"column_name_detail": "",
+					"column_nq_id": "L_RECEIPTDATE",
+					"column_order": 6,
+					"column_orig_name": "L_RECEIPTDATE",
+					"complete_data_type": "DATE",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT_C.L_SHIPINSTRUCT",
+					"column_name": "L_SHIPINSTRUCT",
+					"column_name_detail": "",
+					"column_nq_id": "L_SHIPINSTRUCT",
+					"column_order": 7,
+					"column_orig_name": "L_SHIPINSTRUCT",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT_C.L_SHIPMODE",
+					"column_name": "L_SHIPMODE",
+					"column_name_detail": "",
+					"column_nq_id": "L_SHIPMODE",
+					"column_order": 8,
+					"column_orig_name": "L_SHIPMODE",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT_C.L_COMMENT",
+					"column_name": "L_COMMENT",
+					"column_name_detail": "",
+					"column_nq_id": "L_COMMENT",
+					"column_order": 9,
+					"column_orig_name": "L_COMMENT",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT_C.L_PARTKEY",
+					"column_name": "L_PARTKEY",
+					"column_name_detail": "",
+					"column_nq_id": "L_PARTKEY",
+					"column_order": 10,
+					"column_orig_name": "L_PARTKEY",
+					"complete_data_type": "DECIMAL(18,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT_C.L_SUPPKEY",
+					"column_name": "L_SUPPKEY",
+					"column_name_detail": "",
+					"column_nq_id": "L_SUPPKEY",
+					"column_order": 11,
+					"column_orig_name": "L_SUPPKEY",
+					"complete_data_type": "DECIMAL(18,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT_C.L_LINENUMBER",
+					"column_name": "L_LINENUMBER",
+					"column_name_detail": "",
+					"column_nq_id": "L_LINENUMBER",
+					"column_order": 12,
+					"column_orig_name": "L_LINENUMBER",
+					"complete_data_type": "DECIMAL(18,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT_C.L_QUANTITY",
+					"column_name": "L_QUANTITY",
+					"column_name_detail": "",
+					"column_nq_id": "L_QUANTITY",
+					"column_order": 13,
+					"column_orig_name": "L_QUANTITY",
+					"complete_data_type": "DECIMAL(18,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT_C.L_EXTENDEDPRICE",
+					"column_name": "L_EXTENDEDPRICE",
+					"column_name_detail": "",
+					"column_nq_id": "L_EXTENDEDPRICE",
+					"column_order": 14,
+					"column_orig_name": "L_EXTENDEDPRICE",
+					"complete_data_type": "DOUBLE PRECISION",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT_C.L_DISCOUNT",
+					"column_name": "L_DISCOUNT",
+					"column_name_detail": "",
+					"column_nq_id": "L_DISCOUNT",
+					"column_order": 15,
+					"column_orig_name": "L_DISCOUNT",
+					"complete_data_type": "DOUBLE PRECISION",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT_C.L_TAX",
+					"column_name": "L_TAX",
+					"column_name_detail": "",
+					"column_nq_id": "L_TAX",
+					"column_order": 16,
+					"column_orig_name": "L_TAX",
+					"complete_data_type": "DOUBLE PRECISION",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT_C.L_RETURNFLAG",
+					"column_name": "L_RETURNFLAG",
+					"column_name_detail": "",
+					"column_nq_id": "L_RETURNFLAG",
+					"column_order": 17,
+					"column_orig_name": "L_RETURNFLAG",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_LINEITEM\",\"satellites\":[{\"satellite_id\":\"S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT\"}]}]}}"
+		}
+	],
+	"businessobject_set_id": "businessobject_set_H_LINEITEM",
+	"businessobject_structure": null,
+	"businessobject_view_id": "BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE",
+	"dependent_objects": [
+		{
+			"object_id": "H_LINEITEM",
+			"object_type": "hub"
+		},
+		{
+			"object_id": "S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT",
+			"object_type": "satellite"
+		}
+	],
+	"granularity_satellite_id": "S_LINEITEM_S_EXA_STAGE_R_Lineitem_U_DBT",
+	"system_id": "EXA_STAGE",
+	"system_name": "Exa_stage"
+}

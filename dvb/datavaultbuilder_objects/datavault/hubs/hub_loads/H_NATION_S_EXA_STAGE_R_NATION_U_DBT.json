@@ -1,0 +1,19 @@
+{
+	"business_key_prefix": "",
+	"business_key_short": "N_NATIONKEY",
+	"column_ids": [
+		{
+			"column_id": "STAGING.EXA_STAGE_R_NATION_U_DBT.N_NATIONKEY",
+			"column_order": 1
+		}
+	],
+	"datavault_category_id": "raw_vault",
+	"hub_id": "H_NATION",
+	"hub_load_display_name": "Exa_stage: NATION U DBT (N_NATIONKEY)",
+	"hub_load_id": "H_NATION_S_EXA_STAGE_R_NATION_U_DBT",
+	"keys_are_prehashed": false,
+	"keys_are_unique": true,
+	"staging_table_id": "STAGING.EXA_STAGE_R_NATION_U_DBT",
+	"system_id": "EXA_STAGE",
+	"system_name": "Exa_stage"
+}

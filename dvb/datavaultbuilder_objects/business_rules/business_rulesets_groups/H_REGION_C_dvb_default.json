@@ -1,0 +1,12 @@
+{
+	"business_rules_businessobject_container_display_name": "Region",
+	"business_rules_businessobject_container_id": "H_REGION_C_dvb_default",
+	"business_rules_businessobject_container_order": 7,
+	"business_rules_businessobject_systems": [
+		{
+			"related_businessobject_view_id": "BUSINESSOBJECTS.REGION_S_EXA_STAGE",
+			"system_id": "EXA_STAGE",
+			"system_order": 1
+		}
+	]
+}

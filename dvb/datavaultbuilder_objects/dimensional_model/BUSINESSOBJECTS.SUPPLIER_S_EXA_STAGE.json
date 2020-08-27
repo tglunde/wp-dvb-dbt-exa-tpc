@@ -1,0 +1,120 @@
+{
+	"businessobject_comment": "",
+	"businessobject_display_name": "Supplier > Exa_stage > Default",
+	"businessobject_dropdown_entry_string": "Supplier",
+	"businessobject_elements": [
+		{
+			"columns": [
+				{
+					"column_comment": "Business Key for Hub Supplier",
+					"column_id": "DATAVAULT.H_SUPPLIER.SUPPLIER_BK",
+					"column_name": "Business Key for Hub Supplier",
+					"column_name_detail": "SUPPLIER_BK",
+					"column_nq_id": "SUPPLIER_BK",
+					"column_order": 1,
+					"column_orig_name": "Business Key for Hub Supplier",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_SUPPLIER\"}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_SUPPLIER_S_EXA_STAGE_R_SUPPLIER_U_DBT_C.S_SUPPKEY",
+					"column_name": "S_SUPPKEY",
+					"column_name_detail": "",
+					"column_nq_id": "S_SUPPKEY",
+					"column_order": 2,
+					"column_orig_name": "S_SUPPKEY",
+					"complete_data_type": "DECIMAL(18,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_SUPPLIER_S_EXA_STAGE_R_SUPPLIER_U_DBT_C.S_NAME",
+					"column_name": "S_NAME",
+					"column_name_detail": "",
+					"column_nq_id": "S_NAME",
+					"column_order": 3,
+					"column_orig_name": "S_NAME",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_SUPPLIER_S_EXA_STAGE_R_SUPPLIER_U_DBT_C.S_ADDRESS",
+					"column_name": "S_ADDRESS",
+					"column_name_detail": "",
+					"column_nq_id": "S_ADDRESS",
+					"column_order": 4,
+					"column_orig_name": "S_ADDRESS",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_SUPPLIER_S_EXA_STAGE_R_SUPPLIER_U_DBT_C.S_NATIONKEY",
+					"column_name": "S_NATIONKEY",
+					"column_name_detail": "",
+					"column_nq_id": "S_NATIONKEY",
+					"column_order": 5,
+					"column_orig_name": "S_NATIONKEY",
+					"complete_data_type": "DECIMAL(18,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_SUPPLIER_S_EXA_STAGE_R_SUPPLIER_U_DBT_C.S_PHONE",
+					"column_name": "S_PHONE",
+					"column_name_detail": "",
+					"column_nq_id": "S_PHONE",
+					"column_order": 6,
+					"column_orig_name": "S_PHONE",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_SUPPLIER_S_EXA_STAGE_R_SUPPLIER_U_DBT_C.S_ACCTBAL",
+					"column_name": "S_ACCTBAL",
+					"column_name_detail": "",
+					"column_nq_id": "S_ACCTBAL",
+					"column_order": 7,
+					"column_orig_name": "S_ACCTBAL",
+					"complete_data_type": "DOUBLE PRECISION",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_SUPPLIER_S_EXA_STAGE_R_SUPPLIER_U_DBT_C.S_COMMENT",
+					"column_name": "S_COMMENT",
+					"column_name_detail": "",
+					"column_nq_id": "S_COMMENT",
+					"column_order": 8,
+					"column_orig_name": "S_COMMENT",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_SUPPLIER\",\"satellites\":[{\"satellite_id\":\"S_SUPPLIER_S_EXA_STAGE_R_SUPPLIER_U_DBT\"}]}]}}"
+		}
+	],
+	"businessobject_set_id": "businessobject_set_H_SUPPLIER",
+	"businessobject_structure": null,
+	"businessobject_view_id": "BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE",
+	"dependent_objects": [
+		{
+			"object_id": "H_SUPPLIER",
+			"object_type": "hub"
+		},
+		{
+			"object_id": "S_SUPPLIER_S_EXA_STAGE_R_SUPPLIER_U_DBT",
+			"object_type": "satellite"
+		}
+	],
+	"granularity_satellite_id": "S_SUPPLIER_S_EXA_STAGE_R_SUPPLIER_U_DBT",
+	"system_id": "EXA_STAGE",
+	"system_name": "Exa_stage"
+}

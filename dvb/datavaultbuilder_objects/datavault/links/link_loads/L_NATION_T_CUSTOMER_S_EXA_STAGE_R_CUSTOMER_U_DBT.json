@@ -1,0 +1,7 @@
+{
+	"link_id": "L_NATION_T_CUSTOMER",
+	"link_load_display_name": "Nation > Exa_stage: CUSTOMER U DBT (C_NATIONKEY) TO Customer > Exa_stage: CUSTOMER U DBT (C_CUSTKEY)",
+	"link_load_id": "L_NATION_T_CUSTOMER_S_EXA_STAGE_R_CUSTOMER_U_DBT",
+	"staging_table_id": "STAGING.EXA_STAGE_R_CUSTOMER_U_DBT",
+	"system_id": "EXA_STAGE"
+}

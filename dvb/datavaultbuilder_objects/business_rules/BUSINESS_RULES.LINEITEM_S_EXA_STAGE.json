@@ -1,0 +1,30 @@
+{
+	"accesslayer_priorization": 1,
+	"additional_deployment_parameters": {
+		"business_ruleset_hierarchy_level": 0
+	},
+	"business_rules_view_code": "CREATE VIEW BUSINESS_RULES.LINEITEM_S_EXA_STAGE\nAS\n\n  SELECT \n    bo.\"Business Key for Hub Lineitem\",    -- Business Key for Hub Lineitem\n    bo.L_ORDERKEY,                       -- L_ORDERKEY from Satellite Lineitem > Exa_stage > Default of Lineitem_U_DBT\n    bo.L_LINESTATUS,                     -- L_LINESTATUS from Satellite Lineitem > Exa_stage > Default of Lineitem_U_DBT\n    bo.L_SHIPDATE,                       -- L_SHIPDATE from Satellite Lineitem > Exa_stage > Default of Lineitem_U_DBT\n    bo.L_COMMITDATE,                     -- L_COMMITDATE from Satellite Lineitem > Exa_stage > Default of Lineitem_U_DBT\n    bo.L_RECEIPTDATE,                    -- L_RECEIPTDATE from Satellite Lineitem > Exa_stage > Default of Lineitem_U_DBT\n    bo.L_SHIPINSTRUCT,                   -- L_SHIPINSTRUCT from Satellite Lineitem > Exa_stage > Default of Lineitem_U_DBT\n    bo.L_SHIPMODE,                       -- L_SHIPMODE from Satellite Lineitem > Exa_stage > Default of Lineitem_U_DBT\n    bo.L_COMMENT,                        -- L_COMMENT from Satellite Lineitem > Exa_stage > Default of Lineitem_U_DBT\n    bo.L_PARTKEY,                        -- L_PARTKEY from Satellite Lineitem > Exa_stage > Default of Lineitem_U_DBT\n    bo.L_SUPPKEY,                        -- L_SUPPKEY from Satellite Lineitem > Exa_stage > Default of Lineitem_U_DBT\n    bo.L_LINENUMBER,                     -- L_LINENUMBER from Satellite Lineitem > Exa_stage > Default of Lineitem_U_DBT\n    bo.L_QUANTITY,                       -- L_QUANTITY from Satellite Lineitem > Exa_stage > Default of Lineitem_U_DBT\n    bo.L_EXTENDEDPRICE,                  -- L_EXTENDEDPRICE from Satellite Lineitem > Exa_stage > Default of Lineitem_U_DBT\n    bo.L_DISCOUNT,                       -- L_DISCOUNT from Satellite Lineitem > Exa_stage > Default of Lineitem_U_DBT\n    bo.L_TAX,                            -- L_TAX from Satellite Lineitem > Exa_stage > Default of Lineitem_U_DBT\n    bo.L_RETURNFLAG                      -- L_RETURNFLAG from Satellite Lineitem > Exa_stage > Default of Lineitem_U_DBT\n\n  FROM BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE bo",
+	"business_ruleset_comment": "",
+	"business_ruleset_name": "Unaltered default",
+	"business_ruleset_order": 1,
+	"business_ruleset_suffix_id": null,
+	"business_ruleset_view_id": "BUSINESS_RULES.LINEITEM_S_EXA_STAGE",
+	"container_id": "H_LINEITEM_C_dvb_default",
+	"dependent_objects": [
+		{
+			"object_id": "BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE",
+			"object_type": "business_object"
+		}
+	],
+	"include_in_accesslayer": false,
+	"is_error_ruleset": false,
+	"is_unaltered_business_ruleset": true,
+	"quick_inserts": {
+		"quick_insert_list": [
+			{
+				"quick_insert_table_id": "BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE"
+			}
+		]
+	},
+	"system_id": "EXA_STAGE"
+}

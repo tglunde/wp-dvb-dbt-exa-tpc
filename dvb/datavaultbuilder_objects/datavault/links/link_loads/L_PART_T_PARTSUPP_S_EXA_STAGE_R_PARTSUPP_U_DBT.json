@@ -1,0 +1,7 @@
+{
+	"link_id": "L_PART_T_PARTSUPP",
+	"link_load_display_name": "Part > Exa_stage: PARTSUPP U DBT (PS_PARTKEY) TO Partsupp > Exa_stage: PARTSUPP U DBT (PS_PARTKEY, PS_SUPPKEY)",
+	"link_load_id": "L_PART_T_PARTSUPP_S_EXA_STAGE_R_PARTSUPP_U_DBT",
+	"staging_table_id": "STAGING.EXA_STAGE_R_PARTSUPP_U_DBT",
+	"system_id": "EXA_STAGE"
+}

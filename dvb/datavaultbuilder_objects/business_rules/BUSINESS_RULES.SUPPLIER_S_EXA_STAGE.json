@@ -1,0 +1,30 @@
+{
+	"accesslayer_priorization": 1,
+	"additional_deployment_parameters": {
+		"business_ruleset_hierarchy_level": 0
+	},
+	"business_rules_view_code": "CREATE VIEW BUSINESS_RULES.SUPPLIER_S_EXA_STAGE\nAS\n\n  SELECT \n    bo.\"Business Key for Hub Supplier\",    -- Business Key for Hub Supplier\n    bo.S_SUPPKEY,                        -- S_SUPPKEY from Satellite Supplier > Exa_stage > Default of SUPPLIER_U_DBT\n    bo.S_NAME,                           -- S_NAME from Satellite Supplier > Exa_stage > Default of SUPPLIER_U_DBT\n    bo.S_ADDRESS,                        -- S_ADDRESS from Satellite Supplier > Exa_stage > Default of SUPPLIER_U_DBT\n    bo.S_NATIONKEY,                      -- S_NATIONKEY from Satellite Supplier > Exa_stage > Default of SUPPLIER_U_DBT\n    bo.S_PHONE,                          -- S_PHONE from Satellite Supplier > Exa_stage > Default of SUPPLIER_U_DBT\n    bo.S_ACCTBAL,                        -- S_ACCTBAL from Satellite Supplier > Exa_stage > Default of SUPPLIER_U_DBT\n    bo.S_COMMENT                         -- S_COMMENT from Satellite Supplier > Exa_stage > Default of SUPPLIER_U_DBT\n\n  FROM BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE bo",
+	"business_ruleset_comment": "",
+	"business_ruleset_name": "Unaltered default",
+	"business_ruleset_order": 1,
+	"business_ruleset_suffix_id": null,
+	"business_ruleset_view_id": "BUSINESS_RULES.SUPPLIER_S_EXA_STAGE",
+	"container_id": "H_SUPPLIER_C_dvb_default",
+	"dependent_objects": [
+		{
+			"object_id": "BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE",
+			"object_type": "business_object"
+		}
+	],
+	"include_in_accesslayer": false,
+	"is_error_ruleset": false,
+	"is_unaltered_business_ruleset": true,
+	"quick_inserts": {
+		"quick_insert_list": [
+			{
+				"quick_insert_table_id": "BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE"
+			}
+		]
+	},
+	"system_id": "EXA_STAGE"
+}

@@ -1,0 +1,142 @@
+{
+	"businessobject_comment": "",
+	"businessobject_display_name": "Part > Exa_stage > Default",
+	"businessobject_dropdown_entry_string": "Part",
+	"businessobject_elements": [
+		{
+			"columns": [
+				{
+					"column_comment": "Business Key for Hub Part",
+					"column_id": "DATAVAULT.H_PART.PART_BK",
+					"column_name": "Business Key for Hub Part",
+					"column_name_detail": "PART_BK",
+					"column_nq_id": "PART_BK",
+					"column_order": 1,
+					"column_orig_name": "Business Key for Hub Part",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_PART\"}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_PART_S_EXA_STAGE_R_PART_U_DBT_C.P_PARTKEY",
+					"column_name": "P_PARTKEY",
+					"column_name_detail": "",
+					"column_nq_id": "P_PARTKEY",
+					"column_order": 2,
+					"column_orig_name": "P_PARTKEY",
+					"complete_data_type": "DECIMAL(18,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_PART_S_EXA_STAGE_R_PART_U_DBT_C.P_NAME",
+					"column_name": "P_NAME",
+					"column_name_detail": "",
+					"column_nq_id": "P_NAME",
+					"column_order": 3,
+					"column_orig_name": "P_NAME",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_PART_S_EXA_STAGE_R_PART_U_DBT_C.P_MFGR",
+					"column_name": "P_MFGR",
+					"column_name_detail": "",
+					"column_nq_id": "P_MFGR",
+					"column_order": 4,
+					"column_orig_name": "P_MFGR",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_PART_S_EXA_STAGE_R_PART_U_DBT_C.P_BRAND",
+					"column_name": "P_BRAND",
+					"column_name_detail": "",
+					"column_nq_id": "P_BRAND",
+					"column_order": 5,
+					"column_orig_name": "P_BRAND",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_PART_S_EXA_STAGE_R_PART_U_DBT_C.P_TYPE",
+					"column_name": "P_TYPE",
+					"column_name_detail": "",
+					"column_nq_id": "P_TYPE",
+					"column_order": 6,
+					"column_orig_name": "P_TYPE",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_PART_S_EXA_STAGE_R_PART_U_DBT_C.P_SIZE",
+					"column_name": "P_SIZE",
+					"column_name_detail": "",
+					"column_nq_id": "P_SIZE",
+					"column_order": 7,
+					"column_orig_name": "P_SIZE",
+					"complete_data_type": "DECIMAL(18,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_PART_S_EXA_STAGE_R_PART_U_DBT_C.P_CONTAINER",
+					"column_name": "P_CONTAINER",
+					"column_name_detail": "",
+					"column_nq_id": "P_CONTAINER",
+					"column_order": 8,
+					"column_orig_name": "P_CONTAINER",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_PART_S_EXA_STAGE_R_PART_U_DBT_C.P_RETAILPRICE",
+					"column_name": "P_RETAILPRICE",
+					"column_name_detail": "",
+					"column_nq_id": "P_RETAILPRICE",
+					"column_order": 9,
+					"column_orig_name": "P_RETAILPRICE",
+					"complete_data_type": "DOUBLE PRECISION",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_PART_S_EXA_STAGE_R_PART_U_DBT_C.P_COMMENT",
+					"column_name": "P_COMMENT",
+					"column_name_detail": "",
+					"column_nq_id": "P_COMMENT",
+					"column_order": 10,
+					"column_orig_name": "P_COMMENT",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_PART\",\"satellites\":[{\"satellite_id\":\"S_PART_S_EXA_STAGE_R_PART_U_DBT\"}]}]}}"
+		}
+	],
+	"businessobject_set_id": "businessobject_set_H_PART",
+	"businessobject_structure": null,
+	"businessobject_view_id": "BUSINESSOBJECTS.PART_S_EXA_STAGE",
+	"dependent_objects": [
+		{
+			"object_id": "H_PART",
+			"object_type": "hub"
+		},
+		{
+			"object_id": "S_PART_S_EXA_STAGE_R_PART_U_DBT",
+			"object_type": "satellite"
+		}
+	],
+	"granularity_satellite_id": "S_PART_S_EXA_STAGE_R_PART_U_DBT",
+	"system_id": "EXA_STAGE",
+	"system_name": "Exa_stage"
+}

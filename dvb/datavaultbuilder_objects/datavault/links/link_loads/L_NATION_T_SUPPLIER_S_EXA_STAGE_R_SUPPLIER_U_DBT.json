@@ -1,0 +1,7 @@
+{
+	"link_id": "L_NATION_T_SUPPLIER",
+	"link_load_display_name": "Nation > Exa_stage: SUPPLIER U DBT (S_NATIONKEY) TO Supplier > Exa_stage: SUPPLIER U DBT (S_SUPPKEY)",
+	"link_load_id": "L_NATION_T_SUPPLIER_S_EXA_STAGE_R_SUPPLIER_U_DBT",
+	"staging_table_id": "STAGING.EXA_STAGE_R_SUPPLIER_U_DBT",
+	"system_id": "EXA_STAGE"
+}

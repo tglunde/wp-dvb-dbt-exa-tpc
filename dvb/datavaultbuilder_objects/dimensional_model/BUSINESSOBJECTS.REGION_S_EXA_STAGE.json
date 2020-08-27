@@ -1,0 +1,76 @@
+{
+	"businessobject_comment": "",
+	"businessobject_display_name": "Region > Exa_stage > Default",
+	"businessobject_dropdown_entry_string": "Region",
+	"businessobject_elements": [
+		{
+			"columns": [
+				{
+					"column_comment": "Business Key for Hub Region",
+					"column_id": "DATAVAULT.H_REGION.REGION_BK",
+					"column_name": "Business Key for Hub Region",
+					"column_name_detail": "REGION_BK",
+					"column_nq_id": "REGION_BK",
+					"column_order": 1,
+					"column_orig_name": "Business Key for Hub Region",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_REGION\"}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_REGION_S_EXA_STAGE_R_REGION_U_DBT_C.R_REGIONKEY",
+					"column_name": "R_REGIONKEY",
+					"column_name_detail": "",
+					"column_nq_id": "R_REGIONKEY",
+					"column_order": 2,
+					"column_orig_name": "R_REGIONKEY",
+					"complete_data_type": "DECIMAL(18,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_REGION_S_EXA_STAGE_R_REGION_U_DBT_C.R_NAME",
+					"column_name": "R_NAME",
+					"column_name_detail": "",
+					"column_nq_id": "R_NAME",
+					"column_order": 3,
+					"column_orig_name": "R_NAME",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_REGION_S_EXA_STAGE_R_REGION_U_DBT_C.R_COMMENT",
+					"column_name": "R_COMMENT",
+					"column_name_detail": "",
+					"column_nq_id": "R_COMMENT",
+					"column_order": 4,
+					"column_orig_name": "R_COMMENT",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_REGION\",\"satellites\":[{\"satellite_id\":\"S_REGION_S_EXA_STAGE_R_REGION_U_DBT\"}]}]}}"
+		}
+	],
+	"businessobject_set_id": "businessobject_set_H_REGION",
+	"businessobject_structure": null,
+	"businessobject_view_id": "BUSINESSOBJECTS.REGION_S_EXA_STAGE",
+	"dependent_objects": [
+		{
+			"object_id": "H_REGION",
+			"object_type": "hub"
+		},
+		{
+			"object_id": "S_REGION_S_EXA_STAGE_R_REGION_U_DBT",
+			"object_type": "satellite"
+		}
+	],
+	"granularity_satellite_id": "S_REGION_S_EXA_STAGE_R_REGION_U_DBT",
+	"system_id": "EXA_STAGE",
+	"system_name": "Exa_stage"
+}

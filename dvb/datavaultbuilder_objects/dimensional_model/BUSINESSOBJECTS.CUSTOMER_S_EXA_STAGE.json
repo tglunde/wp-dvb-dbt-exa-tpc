@@ -1,0 +1,131 @@
+{
+	"businessobject_comment": "",
+	"businessobject_display_name": "Customer > Exa_stage > Default",
+	"businessobject_dropdown_entry_string": "Customer",
+	"businessobject_elements": [
+		{
+			"columns": [
+				{
+					"column_comment": "Business Key for Hub Customer",
+					"column_id": "DATAVAULT.H_CUSTOMER.CUSTOMER_BK",
+					"column_name": "Business Key for Hub Customer",
+					"column_name_detail": "CUSTOMER_BK",
+					"column_nq_id": "CUSTOMER_BK",
+					"column_order": 1,
+					"column_orig_name": "Business Key for Hub Customer",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_CUSTOMER\"}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_CUSTOMER_S_EXA_STAGE_R_CUSTOMER_U_DBT_C.C_CUSTKEY",
+					"column_name": "C_CUSTKEY",
+					"column_name_detail": "",
+					"column_nq_id": "C_CUSTKEY",
+					"column_order": 2,
+					"column_orig_name": "C_CUSTKEY",
+					"complete_data_type": "DECIMAL(18,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_CUSTOMER_S_EXA_STAGE_R_CUSTOMER_U_DBT_C.C_NAME",
+					"column_name": "C_NAME",
+					"column_name_detail": "",
+					"column_nq_id": "C_NAME",
+					"column_order": 3,
+					"column_orig_name": "C_NAME",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_CUSTOMER_S_EXA_STAGE_R_CUSTOMER_U_DBT_C.C_ADDRESS",
+					"column_name": "C_ADDRESS",
+					"column_name_detail": "",
+					"column_nq_id": "C_ADDRESS",
+					"column_order": 4,
+					"column_orig_name": "C_ADDRESS",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_CUSTOMER_S_EXA_STAGE_R_CUSTOMER_U_DBT_C.C_NATIONKEY",
+					"column_name": "C_NATIONKEY",
+					"column_name_detail": "",
+					"column_nq_id": "C_NATIONKEY",
+					"column_order": 5,
+					"column_orig_name": "C_NATIONKEY",
+					"complete_data_type": "DECIMAL(18,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_CUSTOMER_S_EXA_STAGE_R_CUSTOMER_U_DBT_C.C_PHONE",
+					"column_name": "C_PHONE",
+					"column_name_detail": "",
+					"column_nq_id": "C_PHONE",
+					"column_order": 6,
+					"column_orig_name": "C_PHONE",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_CUSTOMER_S_EXA_STAGE_R_CUSTOMER_U_DBT_C.C_ACCTBAL",
+					"column_name": "C_ACCTBAL",
+					"column_name_detail": "",
+					"column_nq_id": "C_ACCTBAL",
+					"column_order": 7,
+					"column_orig_name": "C_ACCTBAL",
+					"complete_data_type": "DOUBLE PRECISION",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_CUSTOMER_S_EXA_STAGE_R_CUSTOMER_U_DBT_C.C_MKTSEGMENT",
+					"column_name": "C_MKTSEGMENT",
+					"column_name_detail": "",
+					"column_nq_id": "C_MKTSEGMENT",
+					"column_order": 8,
+					"column_orig_name": "C_MKTSEGMENT",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_CUSTOMER_S_EXA_STAGE_R_CUSTOMER_U_DBT_C.C_COMMENT",
+					"column_name": "C_COMMENT",
+					"column_name_detail": "",
+					"column_nq_id": "C_COMMENT",
+					"column_order": 9,
+					"column_orig_name": "C_COMMENT",
+					"complete_data_type": "VARCHAR(2000000) UTF8",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_CUSTOMER\",\"satellites\":[{\"satellite_id\":\"S_CUSTOMER_S_EXA_STAGE_R_CUSTOMER_U_DBT\"}]}]}}"
+		}
+	],
+	"businessobject_set_id": "businessobject_set_H_CUSTOMER",
+	"businessobject_structure": null,
+	"businessobject_view_id": "BUSINESSOBJECTS.CUSTOMER_S_EXA_STAGE",
+	"dependent_objects": [
+		{
+			"object_id": "H_CUSTOMER",
+			"object_type": "hub"
+		},
+		{
+			"object_id": "S_CUSTOMER_S_EXA_STAGE_R_CUSTOMER_U_DBT",
+			"object_type": "satellite"
+		}
+	],
+	"granularity_satellite_id": "S_CUSTOMER_S_EXA_STAGE_R_CUSTOMER_U_DBT",
+	"system_id": "EXA_STAGE",
+	"system_name": "Exa_stage"
+}
