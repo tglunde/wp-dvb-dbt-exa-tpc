@@ -9,14 +9,10 @@ services:
     volumes:
             - mydata:/exa
     ports:
+      - '6583:6583'
       - '8888:8888'
       - '8443:443'
     privileged: true
 
 volumes:
   mydata:
-    driver: local
-    driver_opts:
-        type: none
-        device: ${PWD}/data 
-        o: bind
