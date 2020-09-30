@@ -5,7 +5,7 @@ version: '3.3'
 services:
 
   exasol:
-    image: 'exasol/docker-db:6.2.6-d1'
+    image: 'exasol/docker-db:6.2.10-d1'
     volumes:
             - exasol:/exa
     ports:
