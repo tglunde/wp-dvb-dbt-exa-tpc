@@ -3,7 +3,7 @@
 DSN=localhost:8888
 USER=sys
 PWD=exasol
-EXAPLUS=~/project/EXAplus-7.0.0/exaplus
+EXAPLUS=/datadrive/EXAplus-6.2.3/exaplus
 
 $EXAPLUS -c $DSN -u $USER -p $PWD -sql 'create schema if not exists tool;'
 $EXAPLUS -c $DSN -u $USER -p $PWD -f `dirname $0`/CREATE_*DDL*.sql
