@@ -1,5 +1,5 @@
 --/
-CREATE OR REPLACE LUA SCRIPT TOOL.CREATE_DDL (add_user_structure,add_rights,store_in_table) RETURNS TABLE AS
+CREATE OR REPLACE LUA SCRIPT EXA_TOOLBOX.CREATE_DDL (add_user_structure,add_rights,store_in_table) RETURNS TABLE AS
 /* 
 
 PARAMETERS: 
@@ -193,7 +193,7 @@ function add_all_users()					-- ADD ALL USERS ----------------------------------
 	if (#aau1_res) > 1 then -- if more than only user 'sys'
 		for i=1,(#aau1_res) do
 			if aau1_res[i].USER_NAME ~= 'SYS' then
-				sqlstr_add('\tCREATE USER "'..aau1_res[i].USER_NAME..'\"')
+				sqlstr_add('\tCREATE USER '..aau1_res[i].USER_NAME..' ')
 				if aau1_res[i].DISTINGUISHED_NAME~=null then  -- if LDAP info given, create username with ldap, otherwise use password
 					ldap_string = (string.gsub(aau1_res[i].DISTINGUISHED_NAME, "'", "''"))
 					sqlstr_add(' identified at ldap as \''..ldap_string..'\' force;\n')
@@ -201,22 +201,22 @@ function add_all_users()					-- ADD ALL USERS ----------------------------------
 					if (aau1_res[i].KERBEROS_PRINCIPAL)~=null then
 						sqlstr_add(' IDENTIFIED BY KERBEROS PRINCIPAL \''..aau1_res[i].KERBEROS_PRINCIPAL..'\';\n')
 					else
-						sqlstr_add(' identified by "Start123";\n')
+						sqlstr_add(' identified by "start123";\n')
 					end
 		                else
-		                       sqlstr_add(' identified by "Start123";\n') 
+		                       sqlstr_add(' identified by "start123";\n') 
 
 				end
 				if aau1_res[i].USER_COMMENT ~= NULL then
 					sqlstr_commit()
-					sqlstr_add('\t\tCOMMENT ON USER "'..aau1_res[i].USER_NAME..'"'.." IS '"..aau1_res[i].USER_COMMENT.."';\n")
+					sqlstr_add('\t\tCOMMENT ON USER '..aau1_res[i].USER_NAME..''.." IS '"..aau1_res[i].USER_COMMENT.."';\n")
 				end
 				if aau1_res[i].USER_PRIORITY~=null then
 					sqlstr_commit()
 					if (version_short ~= ('6.0')) and (version_short ~= ('5.0')) then
-						sqlstr_add('\t\tGRANT PRIORITY GROUP '..aau1_res[i].USER_PRIORITY..' TO "'..aau1_res[i].USER_NAME..'";\n')
+						sqlstr_add('\t\tGRANT PRIORITY GROUP '..aau1_res[i].USER_PRIORITY..' TO '..aau1_res[i].USER_NAME..';\n')
 					else
-						sqlstr_add('\t\tGRANT PRIORITY '..aau1_res[i].USER_PRIORITY..' TO "'..aau1_res[i].USER_NAME..'";\n')
+						sqlstr_add('\t\tGRANT PRIORITY '..aau1_res[i].USER_PRIORITY..' TO '..aau1_res[i].USER_NAME..';\n')
 					end
 				end
 				
@@ -257,7 +257,7 @@ function add_all_rights()					-- ADD ALL RIGHTS --------------------------------
     sqlstr_commit()
 	if (#art1_res) >0 then
 		for i=1,(#art1_res) do
-			sqlstr_add('\tGRANT "'..art1_res[i].GRANTED_ROLE..'" TO "'..art1_res[i].GRANTEE..'"')
+			sqlstr_add('\tGRANT "'..art1_res[i].GRANTED_ROLE..'" TO '..art1_res[i].GRANTEE..'')
 			if art1_res[i].ADMIN_OPTION then
 				sqlstr_add(' WITH ADMIN OPTION')
 			end
@@ -278,7 +278,7 @@ function add_all_rights()					-- ADD ALL RIGHTS --------------------------------
 	elseif (#art12_res)>0 then
 		sqlstr_flush()
 		for i=1,(#art12_res)	do
-			sqlstr_add('\tGRANT '..art12_res[i].PRIVILEGE..' TO "'..art12_res[i].GRANTEE..'";\n')
+			sqlstr_add('\tGRANT '..art12_res[i].PRIVILEGE..' TO '..art12_res[i].GRANTEE..';\n')
 			sqlstr_add('\n')
 			sqlstr_commit()
 		end
@@ -291,13 +291,13 @@ function add_all_rights()					-- ADD ALL RIGHTS --------------------------------
 
 	-- object privileges
 	art2_success, art2_res = pquery([[SELECT 'GRANT '||PRIVILEGE||' ON "'||case when OBJECT_SCHEMA is not null then OBJECT_SCHEMA||'"."'||OBJECT_NAME||'"' else OBJECT_NAME||'"' end ||
-                                        ' TO "'||GRANTEE||'"' grant_text 
+                                        ' TO '||GRANTEE||' ' grant_text 
                                       FROM (select * from EXA_DBA_OBJ_PRIVS where object_type = 'VIEW') op
                                       join (select distinct COLUMN_SCHEMA, COLUMN_TABLE from exa_dba_columns where status is null) cols
                                          on cols.COLUMN_TABLE = op.OBJECT_NAME and cols.COLUMN_SCHEMA = op.OBJECT_SCHEMA
                                       union all 
                                       SELECT 'GRANT '||PRIVILEGE||' ON "'||case when OBJECT_SCHEMA is not null then OBJECT_SCHEMA||'"."'||OBJECT_NAME||'"' else OBJECT_NAME||'"' end ||
-                                        ' TO "'||GRANTEE||'"' grant_text 
+                                        ' TO '||GRANTEE||' ' grant_text 
                                       FROM EXA_DBA_OBJ_PRIVS where object_type <> 'VIEW']])
 	
 	if not art2_success then
@@ -1058,7 +1058,7 @@ return summary, "DDL varchar(2000000)"
 /
 
 --/
-CREATE OR REPLACE LUA SCRIPT TOOL."BACKUP_SYS" (file_location) RETURNS TABLE AS
+CREATE OR REPLACE LUA SCRIPT EXA_TOOLBOX."BACKUP_SYS" (file_location) RETURNS TABLE AS
 
 summary={}
 
@@ -1082,7 +1082,7 @@ return summary, "DDL varchar(2000000)"
 /
 
 --/
-CREATE OR REPLACE LUA SCRIPT TOOL."RESTORE_SYS" RETURNS TABLE AS
+CREATE OR REPLACE LUA SCRIPT EXA_TOOLBOX."RESTORE_SYS" RETURNS TABLE AS
 
 summary={}
 

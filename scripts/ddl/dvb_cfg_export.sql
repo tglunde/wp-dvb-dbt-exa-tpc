@@ -1,0 +1,10 @@
+export DVB_CONFIG.API_HOOK_TEMPLATES into local csv file 'data/API_HOOK_TEMPLATES.sql';
+export DVB_CONFIG.CONFIG into local csv file 'data/CONFIG.sql';
+export DVB_CONFIG.SYSTEM_DATA into local csv file 'data/SYSTEM_DATA.sql';
+export DVB_CONFIG.SYSTEM_COLORS into local csv file 'data/SYSTEM_COLORS.sql';
+export DVB_CONFIG.AUTH_USERS into local csv file 'data/AUTH_USERS.sql';
+export DVB_CONFIG.JOB_DATA into local csv file 'data/JOB_DATA.sql';
+export DVB_CONFIG.JOB_LOADS into local csv file 'data/JOB_LOADS.sql';
+export DVB_CONFIG.JOB_SCHEDULES into local csv file 'data/JOB_SCHEDULES.sql';
+export DVB_CONFIG.JOB_SQL_QUERIES into local csv file 'data/JOB_SQL_QUERIES.sql';
+export DVB_CONFIG.JOB_TRIGGERS into local csv file 'data/JOB_TRIGGERS.sql';
