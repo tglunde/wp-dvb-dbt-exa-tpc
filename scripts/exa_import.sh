@@ -6,10 +6,10 @@ PWD=exasol
 EXAPLUS=exaplus
 
 $EXAPLUS -c $DSN -u $USER -p $PWD -sql 'create schema if not exists EXA_TOOLBOX;'
-for s in `dirname $0`/bootstrap.sql
+for s in `dirname $0`/ddl/bootstrap.sql
 do
   $EXAPLUS -c $DSN -u $USER -p $PWD -f $s
 done
 
-$EXAPLUS -c $DSN -u $USER -p $PWD -f `dirname $0`/dvb_cfg_import.sql
+$EXAPLUS -c $DSN -u $USER -p $PWD -f `dirname $0`/ddl/dvb_cfg_import.sql
 
