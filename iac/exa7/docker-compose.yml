@@ -7,7 +7,7 @@ services:
   exasol:
     image: 'exasol/docker-db:7.0.2'
     volumes:
-            - mydata:/exa
+            - exasol:/exa
     ports:
       - '8563:8563'
       - '6583:6583'
@@ -15,5 +15,8 @@ services:
       - '8443:443'
     privileged: true
 
+  dvb_client:
+    image: 'datavaultbuilder/clientdb_exasol:rel_5.3.0.1_initial_install_only'
+
 volumes:
-  mydata:
+  exasol:
