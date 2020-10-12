@@ -4,7 +4,7 @@ services:
  core:
    env_file: .env
    environment:
-     - 'CLIENT_DB_CONNECTIONSTRING=jdbc:exa:192.168.1.102:8888'
+     - 'CLIENT_DB_CONNECTIONSTRING=jdbc:exa:52.143.0.192:8563'
      - CLIENT_DB_TYPE=exasol_client_db
      - ENABLE_BETA_FEATURES=false
      - 'USE_UNSECURE_DEFAULT_ENCRYPTION_KEYS=false'
@@ -32,8 +32,8 @@ services:
  connection_pool:
    env_file: .env
    environment:
-     - CORE_POOL_MAX_CONNECTIONS=20
-     - CLIENTDB_POOL_MAX_CONNECTIONS=20
+     - CORE_POOL_MAX_CONNECTIONS=100
+     - CLIENTDB_POOL_MAX_CONNECTIONS=100
      #- 'JAVA_OPTS=-Dnet.snowflake.jdbc.loggerImpl=net.snowflake.client.log.SLF4JLogger'
      #- METRICS_PROVIDER=micrometer-prometheus
    image: 'datavaultbuilder/connection_pool:${DVB_TAG}'
