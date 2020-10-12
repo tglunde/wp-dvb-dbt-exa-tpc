@@ -1,0 +1,43 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vnetResourceGroup": {
+            "value": "rg-wp-exasol"
+        },
+        "clusterPrefix": {
+            "value": "exasol7"
+        },
+        "vnetName": {
+            "value": "exasol-vnet"
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "publicIP": {
+            "value": true
+        },
+        "imageType": {
+            "value": {
+                "name": "EXASOL 6.2.6 BYOL",
+                "offer": "exasol-analytics-database-byol",
+                "sku": "exasol_analytic_database_6-2-6_byol"
+            }
+        },
+        "sshKeyData": {
+            "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCxkFx3IjMUaO8+vWskuo1jM1GaldMf+0OVpghuyoqC79k9suG1T1supH/x9vWc0LIu4jILxwrNhW3YXn3A09Uffmyf2EN2H7r1CV1q4Q+rH+17SfFpw+7hvv2QwdiXLL3QRipBtKcTsy4+hPMbUlfQOohI6HqXYymPt+YbsoH/8YjIAfybD2Fxqmq1Hhz0WVL5qcIl60FrXch7zPSXbSW1hbli9eHm9MANO2hqHrwi2OUSxhLsiJ1EMcG0WDgekxMKwmolY8sv78hhDAz79qo0V+9pRV05twOn7rUPKCLEIIMNBi4LEOyTVmBIvcBqIYeUlHEzS5MV82M+Fq9SUddtSaYAiQbufmxuAcKiTKTGrXhePaB+gQ5GqQAxAfkLP3Sv+tQcsyJC2yPrzlWwmkAlECuYYS5w3Z+bJ+qVi7JIs2hrsSl6r7S8zs6SJiHhLoofAoyJH9uTiQWZxknqkxgfN/PHLLoAhi0WbDEILi4ne2sNh/ATjLHAyCmykJ7y65E= generated-by-azure"
+        },
+        "exasolOperationsPassword": {
+            "value": null
+        },
+        "exasolDatabasePassword": {
+            "value": null
+        },
+        "databaseName": {
+            "value": "exasol"
+        },
+        "license": {
+            "value": "<?xml version=\"1.0\" encoding=\"utf-8\"?> <license> <companyName>Alligator Company Software GmbH</companyName> <comment>NFR</comment> <memory>0</memory> <distributor>EXASOL AG</distributor> <distributorID>10001</distributorID> <licenseID>1313</licenseID> <expirationDate>2021-04-23</expirationDate> <features> \t<feature> \t\t<name>Geospatial</name> \t\t<expirationDate>2021-04-23</expirationDate> \t</feature> \t<feature> \t\t<name>LDAP authentication</name> \t\t<expirationDate>2021-04-23</expirationDate> \t</feature> \t<feature> \t\t<name>Python</name> \t\t<expirationDate>2021-04-23</expirationDate> \t</feature> \t<feature> \t\t<name>Query cache</name> \t\t<expirationDate>2021-04-23</expirationDate> \t</feature> \t<feature> \t\t<name>Graph search</name> \t\t<expirationDate>2021-04-23</expirationDate> \t</feature> \t<feature> \t\t<name>Generic JDBC connections</name> \t\t<expirationDate>2021-04-23</expirationDate> \t</feature> \t<feature> \t\t<name>Lua</name> \t\t<expirationDate>2021-04-23</expirationDate> \t</feature> \t<feature> \t\t<name>Skyline</name> \t\t<expirationDate>2021-04-23</expirationDate> \t</feature> \t<feature> \t\t<name>R</name> \t\t<expirationDate>2021-04-23</expirationDate> \t</feature> \t<feature> \t\t<name>Native Oracle connections</name> \t\t<expirationDate>2021-04-23</expirationDate> \t</feature> \t<feature> \t\t<name>Java</name> \t\t<expirationDate>2021-04-23</expirationDate> \t</feature> \t<feature> \t\t<name>eUDF</name> \t\t<expirationDate>2021-04-23</expirationDate> \t</feature> </features> <limits> \t<limit> \t\t<name>Database raw size (GiB)</name> \t\t<value>1000</value> \t</limit> </limits> <keys> <licenseKey> eJwl1juWXSkMBdDcI3HUCyEQMIeaROcOev5Rb12Xaz3X/SCk8+P9/vNf/PrZe52Vb+Z86625Z8TN eaOe63Pvey/fqoqTde8643j9jqx5Yu2V+648d+0YKu1490RWzDGVnXn3PLvu3PVW1rg191BqvXdO 7uH3vb1vRZ3z7rb/fmG/OZTSyJq3Uqm6q0bN8P7MHWfMqYs7M87T13vRa87INWbluGtFupwqjhcr 1nnlc4Qe346Z63gww66ad2GKnWfooTvVd7483uyJ7x43epCR55wdGtqpg2k6o/XLCY/5wqxrjbFi nptnamyboweD0Dv7vvsi5rN3Td3EGAa4MwB+zxtP62b2QoArTtyrLezo3zzbv1UGPsBYG1YwqYWI uV78bQ/IV48qZxXk17rz5VLuxqg0rt8TdshXEeuO5j3Trafua7hr23nnrDrzjV3zYUELS3uYIY6B bSvseCO2ee4N8xaWkHphNrV+56xIuigNaW3BMOBXF/qH1B5aQ68LE2Onve8Ydrye3jCUXVPN5edk jAMKHcFZzdYQpalovElEL7upgQAqpedSvzC7R1NWpznTmGHxkwiZE2DUFljrNopE6QblCYJz4acD OG3tGh6zOq9j3tlNoATjHHCYJCl5Na49VTyobYhdyvUeFdDLM1MY2HXj1OKymoznA+UgJpT3IF76 QOzX3yEuENSlW+o4oLVstis1UHMg77NcfmbpIsV+pmonTJ1Eo9UaPyZqmwKNZ5jaRp5uAByebo3f /VpynQHN1aZjsmMhXKOioJy1+CHdzmhfYAO48VItPqJvmtPLQ0rzsu6nNjBadf1HVa2EINqzWhw4 80bt1fAZe40vWWJ9OJwWz4RUj+PzGYP4Z0u+FCSssQGEkTd+fv37I8La5g0MHIDBQO3X95GMSrIU X9lh4DJIjk3A/pgRrFY9NyJbncRoIUxWLZIiCsLrAGliOkKSGiD+CYPPk4vhV9ctf5Hm6jxtJDv4 2kYPbbYruQI4Xq6R3Dmlb3sNA5KIChH93BFSPcIAoTjT+xkopAPx1mbfnWxy51m1xxfo9MVKGR3c gH8u8O+nGugUOZ1AijbmPFKWgFMC6Zo4xNlA6O1DYZ6lcdHYupVtjQQ7BXBFm7xxj9dHGSu6VpuD ngUdgPsEADZ61FGIJpNc5KC0YRJq0O9ztESLTDGlVytE/mv62c4J1KVlsiz/hCCOZkt6yMkBSx80 BLwzO1eIrjuvJppO1EDyBLSUsTrFspyHy15fXtmz+1aNsZwONKstCZtte+gdRoSLgEi+BBHhrA+L a5GhyAUVtyfWpBvVtNxuvHXjXJK9pNN1wHA7d4qTnEvoN2Krw1FFWYlO8hNAUCzi5ygmbHZhLqRb 6035aA06oQnPsSUdx0aSI8/jdmufO47C1iVrSlaBi8fqAXAkFp061jfR8BEJfaof3peQq3Ngd9yY YnRuCDmSYgRnQzRbm7i82bnHg5KIq/oaBs5oWtZhZ1f0wcGroHbw93E0fQnwoJ1H+nTizdF5fue3 tXh2B0nC92vrCt6OY/IYDQXnaMZ3Dni2L8gBD04T6gDa7dAmtOZEgFR/MRD3fQLujlw5AM0k6P6u YHpLGdkxBA2GJ2owYdGf3wOg6hK6YJLrvB4d7JBOD6T2bEOJUwlgMGwa1UPfV7DskHCTlpwnnVhq fAKg9clTHgBUWtpI5LaTYb5Pt0VYQkmo/fM/YzP9Bg== </licenseKey> </keys> </license>"
+        }
+    }
+}

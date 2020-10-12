@@ -1,0 +1,1032 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "projectTag": {
+            "type": "string",
+            "metadata": {
+                "description": "Project tag"
+            },
+            "defaultValue": ""
+        },
+        "ownerTag": {
+            "type": "string",
+            "metadata": {
+                "description": "Owner tag"
+            },
+            "defaultValue": ""
+        },
+        "vnetResourceGroup": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the resource group of the external virtual network"
+            },
+            "defaultValue": ""
+        },
+        "vnetName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the virtual network where the cluster should reside in"
+            },
+            "defaultValue": "myVnet"
+        },
+        "subnetName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the subnet where the network interfaces should be placed into"
+            },
+            "defaultValue": "mySubnet"
+        },
+        "publicIP": {
+            "type": "bool",
+            "metadata": {
+                "description": "Assign public IP addresses to all instances"
+            },
+            "defaultValue": false
+        },
+        "clusterPrefix": {
+            "type": "string",
+            "metadata": {
+                "description": "Naming prefix for your cluster ressources"
+            },
+            "defaultValue": ""
+        },
+        "imageType": {
+            "type": "object",
+            "defaultValue": {
+                "name": "EXASOL 6.2.6 BYOL",
+                "offer": "exasol-analytics-database-byol",
+                "sku": "exasol_analytic_database_6-2-6_byol"
+            },
+            "metadata": {
+                "description": "VM Size of the exasol nodes e.g. Standard_DS13_v2"
+            }
+        },
+        "nodeVmSize": {
+            "type": "string",
+            "defaultValue": "Standard_E20s_v3",
+            "metadata": {
+                "description": "VM Size of the exasol nodes e.g. Standard_E4s_v3"
+            }
+        },
+        "nodeDataDiskSizeGB": {
+            "type": "int",
+            "defaultValue": 261,
+            "metadata": {
+                "description": "Size in GB of Data Block Device Volumes"
+            }
+        },
+        "nodeNdisks": {
+            "type": "int",
+            "defaultValue": 3,
+            "metadata": {
+                "description": "Number of data block device volumes per node"
+            }
+        },
+        "nodeDataStorageType": {
+            "type": "string",
+            "allowedValues": [
+                "StandardSSD_LRS",
+                "Premium_LRS"
+            ],
+            "defaultValue": "Premium_LRS",
+            "metadata": {
+                "description": "The SKU Type of the storage for the datadisks e.g. Premium_LRS"
+            }
+        },
+        "nodeDiskCaching": {
+            "type": "string",
+            "allowedValues": [
+                "None",
+                "ReadOnly",
+                "ReadWrite"
+            ],
+            "defaultValue": "None",
+            "metadata": {
+                "description": "None for Standard storage. ReadOnly for Premium storage. "
+            }
+        },
+        "dnsServer": {
+            "type": "string",
+            "defaultValue": "168.63.129.16"
+        },
+        "ntpServer": {
+            "type": "string",
+            "defaultValue": "ntp.ubuntu.com"
+        },
+        "defaultUser": {
+            "type": "string",
+            "defaultValue": "exasol",
+            "metadata": {
+                "description": "Default linux user for created virtual machines for ssh access"
+            }
+        },
+        "sshKeyData": {
+            "type": "string",
+            "metadata": {
+                "description": "SSH rsa public key file as a string."
+            }
+        },
+        "exasolOperationsPassword": {
+            "type": "secureString",
+            "metadata": {
+                "description": "Password for the EXAoperation system administration user (ADMIN)",
+                "SNC::Parameter::Metadata": {
+                    "allowedPattern": "[a-zA-Z0-9]{8,40}",
+                    "ConstraintDescription": "must be an alphanumeric"
+                }
+            }
+        },
+        "exasolDatabasePassword": {
+            "type": "secureString",
+            "metadata": {
+                "description": "Password for the database administration user (SYS)",
+                "SNC::Parameter::Metadata": {
+                    "allowedPattern": "[a-zA-Z0-9]{8,40}",
+                    "ConstraintDescription": "must be an alphanumeric"
+                }
+            }
+        },
+        "timeZone": {
+            "type": "string",
+            "allowedValues": [
+                "",
+                "Africa/Abidjan",
+                "Africa/Accra",
+                "Africa/Addis_Ababa",
+                "Africa/Algiers",
+                "Africa/Asmara",
+                "Africa/Asmera",
+                "Africa/Bamako",
+                "Africa/Bangui",
+                "Africa/Banjul",
+                "Africa/Bissau",
+                "Africa/Blantyre",
+                "Africa/Brazzaville",
+                "Africa/Bujumbura",
+                "Africa/Cairo",
+                "Africa/Casablanca",
+                "Africa/Ceuta",
+                "Africa/Conakry",
+                "Africa/Dakar",
+                "Africa/Dar_es_Salaam",
+                "Africa/Djibouti",
+                "Africa/Douala",
+                "Africa/El_Aaiun",
+                "Africa/Freetown",
+                "Africa/Gaborone",
+                "Africa/Harare",
+                "Africa/Johannesburg",
+                "Africa/Juba",
+                "Africa/Kampala",
+                "Africa/Khartoum",
+                "Africa/Kigali",
+                "Africa/Kinshasa",
+                "Africa/Lagos",
+                "Africa/Libreville",
+                "Africa/Lome",
+                "Africa/Luanda",
+                "Africa/Lubumbashi",
+                "Africa/Lusaka",
+                "Africa/Malabo",
+                "Africa/Maputo",
+                "Africa/Maseru",
+                "Africa/Mbabane",
+                "Africa/Mogadishu",
+                "Africa/Monrovia",
+                "Africa/Nairobi",
+                "Africa/Ndjamena",
+                "Africa/Niamey",
+                "Africa/Nouakchott",
+                "Africa/Ouagadougou",
+                "Africa/Porto-Novo",
+                "Africa/Sao_Tome",
+                "Africa/Timbuktu",
+                "Africa/Tripoli",
+                "Africa/Tunis",
+                "Africa/Windhoek",
+                "America/Adak",
+                "America/Anchorage",
+                "America/Anguilla",
+                "America/Antigua",
+                "America/Araguaina",
+                "America/Argentina/Buenos_Aires",
+                "America/Argentina/Catamarca",
+                "America/Argentina/ComodRivadavia",
+                "America/Argentina/Cordoba",
+                "America/Argentina/Jujuy",
+                "America/Argentina/La_Rioja",
+                "America/Argentina/Mendoza",
+                "America/Argentina/Rio_Gallegos",
+                "America/Argentina/Salta",
+                "America/Argentina/San_Juan",
+                "America/Argentina/San_Luis",
+                "America/Argentina/Tucuman",
+                "America/Argentina/Ushuaia",
+                "America/Aruba",
+                "America/Asuncion",
+                "America/Atikokan",
+                "America/Atka",
+                "America/Bahia",
+                "America/Bahia_Banderas",
+                "America/Barbados",
+                "America/Belem",
+                "America/Belize",
+                "America/Blanc-Sablon",
+                "America/Boa_Vista",
+                "America/Bogota",
+                "America/Boise",
+                "America/Buenos_Aires",
+                "America/Cambridge_Bay",
+                "America/Campo_Grande",
+                "America/Cancun",
+                "America/Caracas",
+                "America/Catamarca",
+                "America/Cayenne",
+                "America/Cayman",
+                "America/Chicago",
+                "America/Chihuahua",
+                "America/Coral_Harbour",
+                "America/Cordoba",
+                "America/Costa_Rica",
+                "America/Creston",
+                "America/Cuiaba",
+                "America/Curacao",
+                "America/Danmarkshavn",
+                "America/Dawson",
+                "America/Dawson_Creek",
+                "America/Denver",
+                "America/Detroit",
+                "America/Dominica",
+                "America/Edmonton",
+                "America/Eirunepe",
+                "America/El_Salvador",
+                "America/Ensenada",
+                "America/Fortaleza",
+                "America/Fort_Nelson",
+                "America/Fort_Wayne",
+                "America/Glace_Bay",
+                "America/Godthab",
+                "America/Goose_Bay",
+                "America/Grand_Turk",
+                "America/Grenada",
+                "America/Guadeloupe",
+                "America/Guatemala",
+                "America/Guayaquil",
+                "America/Guyana",
+                "America/Halifax",
+                "America/Havana",
+                "America/Hermosillo",
+                "America/Indiana/Indianapolis",
+                "America/Indiana/Knox",
+                "America/Indiana/Marengo",
+                "America/Indiana/Petersburg",
+                "America/Indianapolis",
+                "America/Indiana/Tell_City",
+                "America/Indiana/Vevay",
+                "America/Indiana/Vincennes",
+                "America/Indiana/Winamac",
+                "America/Inuvik",
+                "America/Iqaluit",
+                "America/Jamaica",
+                "America/Jujuy",
+                "America/Juneau",
+                "America/Kentucky/Louisville",
+                "America/Kentucky/Monticello",
+                "America/Knox_IN",
+                "America/Kralendijk",
+                "America/La_Paz",
+                "America/Lima",
+                "America/Los_Angeles",
+                "America/Louisville",
+                "America/Lower_Princes",
+                "America/Maceio",
+                "America/Managua",
+                "America/Manaus",
+                "America/Marigot",
+                "America/Martinique",
+                "America/Matamoros",
+                "America/Mazatlan",
+                "America/Mendoza",
+                "America/Menominee",
+                "America/Merida",
+                "America/Metlakatla",
+                "America/Mexico_City",
+                "America/Miquelon",
+                "America/Moncton",
+                "America/Monterrey",
+                "America/Montevideo",
+                "America/Montreal",
+                "America/Montserrat",
+                "America/Nassau",
+                "America/New_York",
+                "America/Nipigon",
+                "America/Nome",
+                "America/Noronha",
+                "America/North_Dakota/Beulah",
+                "America/North_Dakota/Center",
+                "America/North_Dakota/New_Salem",
+                "America/Ojinaga",
+                "America/Panama",
+                "America/Pangnirtung",
+                "America/Paramaribo",
+                "America/Phoenix",
+                "America/Port-au-Prince",
+                "America/Porto_Acre",
+                "America/Port_of_Spain",
+                "America/Porto_Velho",
+                "America/Puerto_Rico",
+                "America/Rainy_River",
+                "America/Rankin_Inlet",
+                "America/Recife",
+                "America/Regina",
+                "America/Resolute",
+                "America/Rio_Branco",
+                "America/Rosario",
+                "America/Santa_Isabel",
+                "America/Santarem",
+                "America/Santiago",
+                "America/Santo_Domingo",
+                "America/Sao_Paulo",
+                "America/Scoresbysund",
+                "America/Shiprock",
+                "America/Sitka",
+                "America/St_Barthelemy",
+                "America/St_Johns",
+                "America/St_Kitts",
+                "America/St_Lucia",
+                "America/St_Thomas",
+                "America/St_Vincent",
+                "America/Swift_Current",
+                "America/Tegucigalpa",
+                "America/Thule",
+                "America/Thunder_Bay",
+                "America/Tijuana",
+                "America/Toronto",
+                "America/Tortola",
+                "America/Vancouver",
+                "America/Virgin",
+                "America/Whitehorse",
+                "America/Winnipeg",
+                "America/Yakutat",
+                "America/Yellowknife",
+                "Antarctica/Casey",
+                "Antarctica/Davis",
+                "Antarctica/DumontDUrville",
+                "Antarctica/Macquarie",
+                "Antarctica/Mawson",
+                "Antarctica/McMurdo",
+                "Antarctica/Palmer",
+                "Antarctica/Rothera",
+                "Antarctica/South_Pole",
+                "Antarctica/Syowa",
+                "Antarctica/Troll",
+                "Antarctica/Vostok",
+                "Arctic/Longyearbyen",
+                "Asia/Aden",
+                "Asia/Almaty",
+                "Asia/Amman",
+                "Asia/Anadyr",
+                "Asia/Aqtau",
+                "Asia/Aqtobe",
+                "Asia/Ashgabat",
+                "Asia/Ashkhabad",
+                "Asia/Baghdad",
+                "Asia/Bahrain",
+                "Asia/Baku",
+                "Asia/Bangkok",
+                "Asia/Beijing",
+                "Asia/Beirut",
+                "Asia/Bishkek",
+                "Asia/Brunei",
+                "Asia/Calcutta",
+                "Asia/Chita",
+                "Asia/Choibalsan",
+                "Asia/Chongqing",
+                "Asia/Chungking",
+                "Asia/Colombo",
+                "Asia/Dacca",
+                "Asia/Damascus",
+                "Asia/Dhaka",
+                "Asia/Dili",
+                "Asia/Dubai",
+                "Asia/Dushanbe",
+                "Asia/Gaza",
+                "Asia/Harbin",
+                "Asia/Hebron",
+                "Asia/Ho_Chi_Minh",
+                "Asia/Hong_Kong",
+                "Asia/Hovd",
+                "Asia/Irkutsk",
+                "Asia/Istanbul",
+                "Asia/Jakarta",
+                "Asia/Jayapura",
+                "Asia/Jerusalem",
+                "Asia/Kabul",
+                "Asia/Kamchatka",
+                "Asia/Karachi",
+                "Asia/Kashgar",
+                "Asia/Kathmandu",
+                "Asia/Katmandu",
+                "Asia/Khandyga",
+                "Asia/Kolkata",
+                "Asia/Krasnoyarsk",
+                "Asia/Kuala_Lumpur",
+                "Asia/Kuching",
+                "Asia/Kuwait",
+                "Asia/Macao",
+                "Asia/Macau",
+                "Asia/Magadan",
+                "Asia/Makassar",
+                "Asia/Manila",
+                "Asia/Muscat",
+                "Asia/Nicosia",
+                "Asia/Novokuznetsk",
+                "Asia/Novosibirsk",
+                "Asia/Omsk",
+                "Asia/Oral",
+                "Asia/Phnom_Penh",
+                "Asia/Pontianak",
+                "Asia/Pyongyang",
+                "Asia/Qatar",
+                "Asia/Qyzylorda",
+                "Asia/Rangoon",
+                "Asia/Riyadh",
+                "Asia/Saigon",
+                "Asia/Sakhalin",
+                "Asia/Samarkand",
+                "Asia/Seoul",
+                "Asia/Shanghai",
+                "Asia/Singapore",
+                "Asia/Srednekolymsk",
+                "Asia/Taipei",
+                "Asia/Tashkent",
+                "Asia/Tbilisi",
+                "Asia/Tehran",
+                "Asia/Tel_Aviv",
+                "Asia/Thimbu",
+                "Asia/Thimphu",
+                "Asia/Tokyo",
+                "Asia/Ujung_Pandang",
+                "Asia/Ulaanbaatar",
+                "Asia/Ulan_Bator",
+                "Asia/Urumqi",
+                "Asia/Ust-Nera",
+                "Asia/Vientiane",
+                "Asia/Vladivostok",
+                "Asia/Yakutsk",
+                "Asia/Yekaterinburg",
+                "Asia/Yerevan",
+                "Atlantic/Azores",
+                "Atlantic/Bermuda",
+                "Atlantic/Canary",
+                "Atlantic/Cape_Verde",
+                "Atlantic/Faeroe",
+                "Atlantic/Faroe",
+                "Atlantic/Jan_Mayen",
+                "Atlantic/Madeira",
+                "Atlantic/Reykjavik",
+                "Atlantic/South_Georgia",
+                "Atlantic/Stanley",
+                "Atlantic/St_Helena",
+                "Australia/ACT",
+                "Australia/Adelaide",
+                "Australia/Brisbane",
+                "Australia/Broken_Hill",
+                "Australia/Canberra",
+                "Australia/Currie",
+                "Australia/Darwin",
+                "Australia/Eucla",
+                "Australia/Hobart",
+                "Australia/LHI",
+                "Australia/Lindeman",
+                "Australia/Lord_Howe",
+                "Australia/Melbourne",
+                "Australia/North",
+                "Australia/NSW",
+                "Australia/Perth",
+                "Australia/Queensland",
+                "Australia/South",
+                "Australia/Sydney",
+                "Australia/Tasmania",
+                "Australia/Victoria",
+                "Australia/West",
+                "Australia/Yancowinna",
+                "Brazil/Acre",
+                "Brazil/DeNoronha",
+                "Brazil/East",
+                "Brazil/West",
+                "Canada/Atlantic",
+                "Canada/Central",
+                "Canada/Eastern",
+                "Canada/East-Saskatchewan",
+                "Canada/Mountain",
+                "Canada/Newfoundland",
+                "Canada/Pacific",
+                "Canada/Saskatchewan",
+                "Canada/Yukon",
+                "CET",
+                "Chile/Continental",
+                "Chile/EasterIsland",
+                "CST6CDT",
+                "Cuba",
+                "EET",
+                "Egypt",
+                "Eire",
+                "EST",
+                "EST5EDT",
+                "Etc/GMT",
+                "Etc/GMT0",
+                "Etc/GMT-12",
+                "Etc/GMT-11",
+                "Etc/GMT-10",
+                "Etc/GMT-9",
+                "Etc/GMT-8",
+                "Etc/GMT-7",
+                "Etc/GMT-6",
+                "Etc/GMT-5",
+                "Etc/GMT-4",
+                "Etc/GMT-3",
+                "Etc/GMT-2",
+                "Etc/GMT-1",
+                "Etc/GMT-0",
+                "Etc/GMT+0",
+                "Etc/GMT+1",
+                "Etc/GMT+2",
+                "Etc/GMT+3",
+                "Etc/GMT+4",
+                "Etc/GMT+5",
+                "Etc/GMT+6",
+                "Etc/GMT+7",
+                "Etc/GMT+8",
+                "Etc/GMT+9",
+                "Etc/GMT+10",
+                "Etc/GMT+11",
+                "Etc/GMT+12",
+                "Etc/GMT-13",
+                "Etc/GMT-14",
+                "Etc/Greenwich",
+                "Etc/UCT",
+                "Etc/Universal",
+                "Etc/UTC",
+                "Etc/Zulu",
+                "Europe/Amsterdam",
+                "Europe/Andorra",
+                "Europe/Athens",
+                "Europe/Belfast",
+                "Europe/Belgrade",
+                "Europe/Berlin",
+                "Europe/Bratislava",
+                "Europe/Brussels",
+                "Europe/Bucharest",
+                "Europe/Budapest",
+                "Europe/Busingen",
+                "Europe/Chisinau",
+                "Europe/Copenhagen",
+                "Europe/Dublin",
+                "Europe/Gibraltar",
+                "Europe/Guernsey",
+                "Europe/Helsinki",
+                "Europe/Isle_of_Man",
+                "Europe/Istanbul",
+                "Europe/Jersey",
+                "Europe/Kaliningrad",
+                "Europe/Kiev",
+                "Europe/Lisbon",
+                "Europe/Ljubljana",
+                "Europe/London",
+                "Europe/Luxembourg",
+                "Europe/Madrid",
+                "Europe/Malta",
+                "Europe/Mariehamn",
+                "Europe/Minsk",
+                "Europe/Monaco",
+                "Europe/Moscow",
+                "Europe/Nicosia",
+                "Europe/Oslo",
+                "Europe/Paris",
+                "Europe/Podgorica",
+                "Europe/Prague",
+                "Europe/Riga",
+                "Europe/Rome",
+                "Europe/Samara",
+                "Europe/San_Marino",
+                "Europe/Sarajevo",
+                "Europe/Simferopol",
+                "Europe/Skopje",
+                "Europe/Sofia",
+                "Europe/Stockholm",
+                "Europe/Tallinn",
+                "Europe/Tirane",
+                "Europe/Tiraspol",
+                "Europe/Uzhgorod",
+                "Europe/Vaduz",
+                "Europe/Vatican",
+                "Europe/Vienna",
+                "Europe/Vilnius",
+                "Europe/Volgograd",
+                "Europe/Warsaw",
+                "Europe/Zagreb",
+                "Europe/Zaporozhye",
+                "Europe/Zurich",
+                "Factory",
+                "GB",
+                "GB-Eire",
+                "GMT",
+                "GMT0",
+                "GMT-0",
+                "GMT+0",
+                "Greenwich",
+                "Hongkong",
+                "HST",
+                "Iceland",
+                "Indian/Antananarivo",
+                "Indian/Chagos",
+                "Indian/Christmas",
+                "Indian/Cocos",
+                "Indian/Comoro",
+                "Indian/Kerguelen",
+                "Indian/Mahe",
+                "Indian/Maldives",
+                "Indian/Mauritius",
+                "Indian/Mayotte",
+                "Indian/Reunion",
+                "Iran",
+                "Israel",
+                "Jamaica",
+                "Japan",
+                "Kwajalein",
+                "Libya",
+                "MET",
+                "Mexico/BajaNorte",
+                "Mexico/BajaSur",
+                "Mexico/General",
+                "MST",
+                "MST7MDT",
+                "Navajo",
+                "NZ",
+                "NZ-CHAT",
+                "Pacific/Apia",
+                "Pacific/Auckland",
+                "Pacific/Bougainville",
+                "Pacific/Chatham",
+                "Pacific/Chuuk",
+                "Pacific/Easter",
+                "Pacific/Efate",
+                "Pacific/Enderbury",
+                "Pacific/Fakaofo",
+                "Pacific/Fiji",
+                "Pacific/Funafuti",
+                "Pacific/Galapagos",
+                "Pacific/Gambier",
+                "Pacific/Guadalcanal",
+                "Pacific/Guam",
+                "Pacific/Honolulu",
+                "Pacific/Johnston",
+                "Pacific/Kiritimati",
+                "Pacific/Kosrae",
+                "Pacific/Kwajalein",
+                "Pacific/Majuro",
+                "Pacific/Marquesas",
+                "Pacific/Midway",
+                "Pacific/Nauru",
+                "Pacific/Niue",
+                "Pacific/Norfolk",
+                "Pacific/Noumea",
+                "Pacific/Pago_Pago",
+                "Pacific/Palau",
+                "Pacific/Pitcairn",
+                "Pacific/Pohnpei",
+                "Pacific/Ponape",
+                "Pacific/Port_Moresby",
+                "Pacific/Rarotonga",
+                "Pacific/Saipan",
+                "Pacific/Samoa",
+                "Pacific/Tahiti",
+                "Pacific/Tarawa",
+                "Pacific/Tongatapu",
+                "Pacific/Truk",
+                "Pacific/Wake",
+                "Pacific/Wallis",
+                "Pacific/Yap",
+                "Poland",
+                "Portugal",
+                "PRC",
+                "PST8PDT",
+                "ROC",
+                "ROK",
+                "Singapore",
+                "Turkey",
+                "UCT",
+                "Universal",
+                "US/Alaska",
+                "US/Aleutian",
+                "US/Arizona",
+                "US/Central",
+                "US/Eastern",
+                "US/East-Indiana",
+                "US/Hawaii",
+                "US/Indiana-Starke",
+                "US/Michigan",
+                "US/Mountain",
+                "US/Pacific",
+                "US/Pacific-New",
+                "US/Samoa",
+                "UTC",
+                "WET",
+                "W-SU",
+                "Zulu"
+            ],
+            "defaultValue": "Europe/Berlin"
+        },
+        "databaseName": {
+            "type": "string",
+            "defaultValue": "exasol",
+            "metadata": {
+                "description": "must only contain 5-20 alphanumeric characters and the underline character",
+                "SNC::Parameter::Metadata": {
+                    "allowedPattern": "[a-zA-Z0-9_]{5,20}",
+                    "ConstraintDescription": "must be an alphanumeric"
+                }
+            }
+        },
+        "securityGroupAccess": {
+            "type": "string",
+            "defaultValue": "0.0.0.0/0",
+            "metadata": {
+                "description": "CIDR block from where to allow access (0.0.0.0/0 default route -> allow access from everywhere)",
+                "SNC::Parameter::Metadata": {
+                    "allowedPattern": "\\d{1,3}([.]\\d{1,3}){3}/\\d{1,2}",
+                    "ConstraintDescription": "must be an alphanumeric"
+                }
+            }
+        },
+        "license": {
+            "type": "string",
+            "defaultValue": "",
+            "metadata": {
+                "description": "(OPTIONAL) In case of a BYOL image, copy the whole content of the xml license file (open the file in an editor, select everything and paste the content into the input field)"
+            }
+        }
+    },
+    "variables": {
+        "subnetId": "[concat(resourceId(parameters('vnetResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('vnetName')),'/subnets/', parameters('subnetName'))]",
+        "networkSecurityGroupName": "[concat(parameters('clusterPrefix'),'-security-group')]",
+        "singleQuote": "'",
+        "license": "[replace(parameters('license'), '\"',variables('singleQuote'))]",
+        "resourceGroupId": "[resourceGroup().id]",
+        "sshKeyPath": "[concat('/home/',parameters('defaultUser'),'/.ssh/authorized_keys')]"
+    },
+    "functions": [
+        {
+            "namespace": "ipfunctions",
+            "members": {
+                "ipAddWithCidrBlock": {
+                    "parameters": [
+                        {
+                            "name": "cidrblock",
+                            "type": "string"
+                        },
+                        {
+                            "name": "add",
+                            "type": "int"
+                        }
+                    ],
+                    "output": {
+                        "type": "string",
+                        "value": "[concat(substring(parameters('cidrblock'), 0, add(lastIndexOf(parameters('cidrblock'), '.'),1)), add(int(substring(parameters('cidrblock'), add(lastIndexOf(parameters('cidrblock'), '.'),1), sub(indexOf(parameters('cidrblock'), '/'), add(lastIndexOf(parameters('cidrblock'), '.'),1)))),parameters('add')))]"
+                    }
+                }
+            }
+        }
+    ],
+    "resources": [
+        {
+            "name": "[variables('networkSecurityGroupName')]",
+            "tags": {
+                "Project": "[parameters('projectTag')]",
+                "Owner": "[parameters('ownerTag')]"
+            },
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "apiVersion": "2016-09-01",
+            "location": "[resourceGroup().location]",
+            "comments": "Network Security Group (NSG) primary NIC",
+            "properties": {
+                "securityRules": [
+                    {
+                        "name": "default-allow-ssh",
+                        "properties": {
+                            "priority": 1000,
+                            "sourceAddressPrefix": "[parameters('securityGroupAccess')]",
+                            "protocol": "Tcp",
+                            "destinationPortRange": "22",
+                            "access": "Allow",
+                            "direction": "Inbound",
+                            "sourcePortRange": "*",
+                            "destinationAddressPrefix": "*"
+                        }
+                    },
+                    {
+                        "name": "default-allow-https",
+                        "properties": {
+                            "priority": 1001,
+                            "sourceAddressPrefix": "[parameters('securityGroupAccess')]",
+                            "protocol": "Tcp",
+                            "destinationPortRange": "443",
+                            "access": "Allow",
+                            "direction": "Inbound",
+                            "sourcePortRange": "*",
+                            "destinationAddressPrefix": "*"
+                        }
+                    },
+                    {
+                        "name": "default-allow-exasol",
+                        "properties": {
+                            "priority": 1002,
+                            "sourceAddressPrefix": "[parameters('securityGroupAccess')]",
+                            "protocol": "Tcp",
+                            "destinationPortRange": "8563",
+                            "access": "Allow",
+                            "direction": "Inbound",
+                            "sourcePortRange": "*",
+                            "destinationAddressPrefix": "*"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "[concat(parameters('clusterPrefix'),'-public-ip-address')]",
+            "tags": {
+                "Project": "[parameters('projectTag')]",
+                "Owner": "[parameters('ownerTag')]"
+            },
+            "type": "Microsoft.Network/publicIPAddresses",
+            "apiVersion": "2017-10-01",
+            "location": "[resourceGroup().location]",
+            "comments": "Public IP NICs",
+            "sku": {
+                "name": "Standard"
+            },
+            "properties": {
+                "publicIPAllocationMethod": "Static"
+            }
+        },
+        {
+            "apiVersion": "2017-03-01",
+            "tags": {
+                "Project": "[parameters('projectTag')]",
+                "Owner": "[parameters('ownerTag')]"
+            },
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "exasol6-pub-nic",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[concat('Microsoft.Network/publicIPAddresses/', concat(parameters('clusterPrefix'), '-public-ip-address'))]",
+                "[concat('Microsoft.Network/networkSecurityGroups/', variables('networkSecurityGroupName'))]"
+            ],
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "exasol7-nic0-ip-config",
+                        "properties": {
+                            "subnet": {
+                                "id": "[variables('subnetId')]"
+                            },
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIpAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIpAddresses', concat(parameters('clusterPrefix'), '-public-ip-address'))]"
+                            }
+                        }
+                    }
+                ],
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
+                }
+            }
+        },
+        {
+            "apiVersion": "2018-06-01",
+            "type": "Microsoft.Compute/virtualMachines",
+            "tags": {
+                "Project": "[parameters('projectTag')]",
+                "Owner": "[parameters('ownerTag')]"
+            },
+            "name": "[concat(concat(parameters('clusterPrefix'),'-single-node'))]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[if(parameters('publicIP'),resourceId('Microsoft.Network/networkInterfaces', 'exasol6-pub-nic'), resourceId('Microsoft.Network/networkInterfaces', 'nic'))]"
+            ],
+            "plan": {
+                "name": "[parameters('imageType').sku]",
+                "product": "[parameters('imageType').offer]",
+                "publisher": "exasol"
+            },
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "[parameters('nodeVmSize')]"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "exasol",
+                        "offer": "[parameters('imageType').offer]",
+                        "sku": "[parameters('imageType').sku]",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "name": "[concat(concat(parameters('clusterPrefix'),'-n00'), '-osdisk')]",
+                        "createOption": "FromImage",
+                        "managedDisk": {
+                            "storageAccountType": "[parameters('nodeDataStorageType')]"
+                        }
+                    },
+                    "copy": [
+                        {
+                            "name": "dataDisks",
+                            "count": "[parameters('nodeNdisks')]",
+                            "input": {
+                                "name": "[concat(concat(parameters('clusterPrefix'),'-singlenode'), '-datadisk',copyIndex('dataDisks'))]",
+                                "diskSizeGB": "[parameters('nodeDataDiskSizeGB')]",
+                                "caching": "[parameters('nodeDiskCaching')]",
+                                "lun": "[copyIndex('dataDisks')]",
+                                "createOption": "Empty",
+                                "managedDisk": {
+                                    "storageAccountType": "[parameters('nodeDataStorageType')]"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "osProfile": {
+                    "computerName": "[concat(concat(parameters('clusterPrefix'),'-n00'))]",
+                    "adminUsername": "[parameters('defaultUser')]",
+                    "customData": "[base64(concat('mkdir -p /var/lib/exawolke/\nln -sf /var/lib/exawolke/cluster.conf\nLICENSE=\"', variables('license'),'\"\nif ! [[ -z ${LICENSE//} ]]; then mv /usr/opt/EXAWolke/etc/exasolution.lic /usr/opt/EXAWolke/etc/exasolution.lic_backup; echo $LICENSE > /usr/opt/EXAWolke/etc/exasolution.lic; fi\nln -sf /var/lib/exawolke/cluster.conf\ncat <<-EOF > /var/lib/exawolke/cluster.conf\nNODES=\"\"\nDB_NAME=\"', parameters('databaseName'),'\"\nTIMEZONE=\"',parameters('timeZone'),'\"\nDNS_SERVER_1=\"', parameters('dnsServer'),'\"\nNTP_SERVER_1=\"', parameters('ntpServer'),'\"\nDEFAULT_GATEWAY=\"',ipfunctions.ipAddWithCidrBlock(reference(concat(resourceId(parameters('vnetResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('vnetName')),'/subnets/', parameters('subnetName')), '2017-10-01').addressPrefix, 1),'\"\nNETWORK_RANGE=\"',reference(concat(resourceId(parameters('vnetResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('vnetName')),'/subnets/', parameters('subnetName')), '2017-10-01').addressPrefix, '\"\nCOS_NETWORK=\"',reference(concat(resourceId(parameters('vnetResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('vnetName')),'/subnets/', parameters('subnetName')), '2017-10-01').addressPrefix,'\"\nAUTOREMOVE=\"False\"\nCOS_NETWORK_OFFSET=\"0\"\nPASSWORD=\"',parameters('exasolOperationsPassword'),'\"\nPASSWORD_DB=\"',parameters('exasolDatabasePassword'),'\"\nDB_RESTORE_BACKUP_SOURCE=\"https://',uniqueString(resourceGroup().id, parameters('clusterPrefix')),'.blob.core.windows.net/',parameters('clusterPrefix'),'\"\nRESTORE_BACKUP_ACCESS_KEY=\"',listKeys(resourceId('Microsoft.Storage/storageAccounts', uniqueString(resourceGroup().id, parameters('clusterPrefix'))), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value,'\"\nINSTANCE_TYPE=\"',parameters('nodeVmSize'),'\"\nEOF\n'))]",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": true,
+                        "ssh": {
+                            "publicKeys": [
+                                {
+                                    "path": "[variables('sshKeyPath')]",
+                                    "keyData": "[parameters('sshKeyData')]"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[if(parameters('publicIP'),resourceId('Microsoft.Network/networkInterfaces', 'exasol6-pub-nic'), resourceId('Microsoft.Network/networkInterfaces', 'nic'))]"
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri": "[concat('https://', uniqueString(resourceGroup().id, parameters('clusterPrefix')), '.blob.core.windows.net')]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "[uniqueString(resourceGroup().id, parameters('clusterPrefix'))]",
+            "type": "Microsoft.Storage/storageAccounts",
+            "tags": {
+                "Project": "[parameters('projectTag')]",
+                "Owner": "[parameters('ownerTag')]"
+            },
+            "apiVersion": "2018-02-01",
+            "location": "[resourceGroup().location]",
+            "kind": "StorageV2",
+            "sku": {
+                "name": "Standard_LRS"
+            },
+            "properties": {
+                "accessTier": "Cool"
+            },
+            "resources": [
+                {
+                    "name": "[concat('default/', parameters('clusterPrefix'))]",
+                    "type": "blobServices/containers",
+                    "apiVersion": "2018-03-01-preview",
+                    "dependsOn": [
+                        "[uniqueString(resourceGroup().id, parameters('clusterPrefix'))]"
+                    ]
+                }
+            ]
+        },
+        {
+            "apiVersion": "2018-02-01",
+            "name": "pid-f374df30-098b-58b0-84e2-9dc77a11f472",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "resources": []
+                }
+            }
+        }
+    ]
+}
