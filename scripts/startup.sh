@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #start exasol
-docker-compose -f `dirname $0`/../iac/exa/docker-compose.yml up -d exasol
+#docker-compose -f `dirname $0`/../iac/exa/docker-compose.yml up -d exasol
 
 #wait for db
 

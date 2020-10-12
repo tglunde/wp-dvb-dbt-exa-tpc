@@ -1,3 +1,5 @@
+docker cp ~/wp-dvb-dbt-exa-tpc/iac/exa/db1.cfg exa_exasol_1:/
+
 echo $'\nStopping DB1...'
 docker exec exa_exasol_1 dwad_client stop-wait DB1
 echo

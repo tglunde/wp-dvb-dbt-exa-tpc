@@ -17,8 +17,8 @@ data_preview_timeout,300,"query timeout for data preview in seconds",0
 support_link,http://datavault-builder.com/en/supportchat,"for link in gui",0
 include_in_accesslayer_default,FALSE,"automatically include new business ruleset in accesslayer",1
 use_bulk_copy_on_mssql,TRUE,"if client db is mssql, do loads as bulk loads. No function on postgres",1
-max_parallel_loads,5,"global maximum of parallelly running staging + datavault loads",1
-max_parallel_staging,3,"global maximum of parallelly running staging loads",1
+max_parallel_loads,8,"global maximum of parallelly running staging + datavault loads",1
+max_parallel_staging,5,"global maximum of parallelly running staging loads",1
 max_parallel_loads_from_staging_table,-1,"global maximum of parallelly running load on the same staging table, set to -1 for no limit",1
 run_job_sql_query_on_core,TRUE,"if true, run job triggered sql query on core, otherwise run on clientdb",1
 transaction_link_fk_constraints,TRUE,"transaction links have foreign key constraints on multi link hash keys",1
