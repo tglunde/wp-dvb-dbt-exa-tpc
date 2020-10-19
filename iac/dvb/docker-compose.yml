@@ -32,7 +32,7 @@ services:
  connection_pool:
    env_file: .env
    environment:
-     - CORE_POOL_MAX_CONNECTIONS=100
+     - CORE_POOL_MAX_CONNECTIONS=50
      - CLIENTDB_POOL_MAX_CONNECTIONS=100
      #- 'JAVA_OPTS=-Dnet.snowflake.jdbc.loggerImpl=net.snowflake.client.log.SLF4JLogger'
      #- METRICS_PROVIDER=micrometer-prometheus
@@ -94,6 +94,26 @@ services:
    networks:
      dvbnet2:
    restart: always
+  
+ prometheus:
+  image: datavaultbuilder/prometheus:${DVB_TAG}
+  volumes:
+    - prometheus:/var/lib/prometheus
+  networks:
+    - dvbnet2
+  restart: always
+
+ grafana:
+    environment:
+      - 'GF_SERVER_ROOT_URL=https://104.47.154.248/grafana'
+      #- 'GF_SECURITY_ADMIN_PASSWORD=someSecretPassword!'
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+    image: datavaultbuilder/grafana:${DVB_TAG}
+    volumes:
+      - grafana:/var/lib/grafana
+    networks:
+      - dvbnet2
+    restart: always
 
 secrets:
    systems_password_public_key:
@@ -125,6 +145,8 @@ volumes:
    files:
    pddb:
    exa:
+   prometheus:
+   grafana:
 
 networks:
    dvbnet2:

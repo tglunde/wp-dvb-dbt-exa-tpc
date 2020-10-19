@@ -8,7 +8,7 @@ To view a copy of this license, visit
 <https://creativecommons.org/licenses/by-nc-nd/4.0>
 
 This book is open source:
-<https://github.com/tglunde/wp-dvb-dbt-exa-tpc/doc>
+<https://github.com/tglunde/wp-dvb-dbt-exa-tpc>
 
 Published on the Alligator Company website:
 [https://alligator-company.de]()
