@@ -1,0 +1,7 @@
+{
+	"link_id": "L_SUPPLIER_T_PARTSUPP",
+	"link_load_display_name": "Supplier > TPC: PARTSUPP U TPCH SF1 (PS_SUPPKEY) TO Partsupp > TPC: PARTSUPP U TPCH SF1 (PS_PARTKEY, PS_SUPPKEY)",
+	"link_load_id": "L_SUPPLIER_T_PARTSUPP_S_TPC_R_PARTSUPP_U_TPCH_SF1",
+	"staging_table_id": "STAGING.TPC_R_PARTSUPP_U_TPCH_SF1",
+	"system_id": "TPC"
+}

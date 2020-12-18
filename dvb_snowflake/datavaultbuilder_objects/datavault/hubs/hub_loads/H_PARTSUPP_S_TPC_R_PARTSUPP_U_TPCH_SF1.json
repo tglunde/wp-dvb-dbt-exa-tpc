@@ -1,0 +1,23 @@
+{
+	"business_key_prefix": "",
+	"business_key_short": "PS_PARTKEY, PS_SUPPKEY",
+	"column_ids": [
+		{
+			"column_id": "STAGING.TPC_R_PARTSUPP_U_TPCH_SF1.PS_PARTKEY",
+			"column_order": 1
+		},
+		{
+			"column_id": "STAGING.TPC_R_PARTSUPP_U_TPCH_SF1.PS_SUPPKEY",
+			"column_order": 2
+		}
+	],
+	"datavault_category_id": "raw_vault",
+	"hub_id": "H_PARTSUPP",
+	"hub_load_display_name": "TPC: PARTSUPP U TPCH SF1 (PS_PARTKEY, PS_SUPPKEY)",
+	"hub_load_id": "H_PARTSUPP_S_TPC_R_PARTSUPP_U_TPCH_SF1",
+	"keys_are_prehashed": false,
+	"keys_are_unique": true,
+	"staging_table_id": "STAGING.TPC_R_PARTSUPP_U_TPCH_SF1",
+	"system_id": "TPC",
+	"system_name": "TPC"
+}

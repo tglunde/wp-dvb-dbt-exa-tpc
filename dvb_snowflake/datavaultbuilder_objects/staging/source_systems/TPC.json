@@ -1,0 +1,17 @@
+{
+	"deployable": true,
+	"hidden_in_system_deployment": false,
+	"source_type_id": "intradatabase",
+	"source_type_name": "Intra / Cross Database Staging",
+	"source_type_parameters": [
+		{
+			"source_type_parameter_id": "database_idbl",
+			"source_type_parameter_value": "SNOWFLAKE_SAMPLE_DATA"
+		}
+	],
+	"source_type_url": "",
+	"system_color": "#990000",
+	"system_comment": "",
+	"system_id": "TPC",
+	"system_name": "TPC"
+}

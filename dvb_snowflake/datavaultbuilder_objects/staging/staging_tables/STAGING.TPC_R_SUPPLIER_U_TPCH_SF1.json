@@ -1,0 +1,116 @@
+{
+	"columns": [
+		{
+			"column_comment": null,
+			"column_id": "STAGING.TPC_R_SUPPLIER_U_TPCH_SF1.S_SUPPKEY",
+			"column_name": "S_SUPPKEY",
+			"column_order": 1,
+			"complete_data_type": "NUMBER(38,0)",
+			"jdbc_data_type": {
+				"character_maximum_length": null,
+				"data_type_name": "NUMBER",
+				"jdbc_data_type_id": 2,
+				"numeric_precision": 38,
+				"numeric_scale": 0
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.TPC_R_SUPPLIER_U_TPCH_SF1.S_NAME",
+			"column_name": "S_NAME",
+			"column_order": 2,
+			"complete_data_type": "TEXT",
+			"jdbc_data_type": {
+				"character_maximum_length": 16777216,
+				"data_type_name": "TEXT",
+				"jdbc_data_type_id": 12,
+				"numeric_precision": null,
+				"numeric_scale": null
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.TPC_R_SUPPLIER_U_TPCH_SF1.S_ADDRESS",
+			"column_name": "S_ADDRESS",
+			"column_order": 3,
+			"complete_data_type": "TEXT",
+			"jdbc_data_type": {
+				"character_maximum_length": 16777216,
+				"data_type_name": "TEXT",
+				"jdbc_data_type_id": 12,
+				"numeric_precision": null,
+				"numeric_scale": null
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.TPC_R_SUPPLIER_U_TPCH_SF1.S_NATIONKEY",
+			"column_name": "S_NATIONKEY",
+			"column_order": 4,
+			"complete_data_type": "NUMBER(38,0)",
+			"jdbc_data_type": {
+				"character_maximum_length": null,
+				"data_type_name": "NUMBER",
+				"jdbc_data_type_id": 2,
+				"numeric_precision": 38,
+				"numeric_scale": 0
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.TPC_R_SUPPLIER_U_TPCH_SF1.S_PHONE",
+			"column_name": "S_PHONE",
+			"column_order": 5,
+			"complete_data_type": "TEXT",
+			"jdbc_data_type": {
+				"character_maximum_length": 16777216,
+				"data_type_name": "TEXT",
+				"jdbc_data_type_id": 12,
+				"numeric_precision": null,
+				"numeric_scale": null
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.TPC_R_SUPPLIER_U_TPCH_SF1.S_ACCTBAL",
+			"column_name": "S_ACCTBAL",
+			"column_order": 6,
+			"complete_data_type": "NUMBER(12,2)",
+			"jdbc_data_type": {
+				"character_maximum_length": null,
+				"data_type_name": "NUMBER",
+				"jdbc_data_type_id": 2,
+				"numeric_precision": 12,
+				"numeric_scale": 2
+			}
+		},
+		{
+			"column_comment": null,
+			"column_id": "STAGING.TPC_R_SUPPLIER_U_TPCH_SF1.S_COMMENT",
+			"column_name": "S_COMMENT",
+			"column_order": 7,
+			"complete_data_type": "TEXT",
+			"jdbc_data_type": {
+				"character_maximum_length": 16777216,
+				"data_type_name": "TEXT",
+				"jdbc_data_type_id": 12,
+				"numeric_precision": null,
+				"numeric_scale": null
+			}
+		}
+	],
+	"loading_batch_size": 50000,
+	"source_schema_name": "TPCH_SF1",
+	"source_schema_or_system_id": "TPCH_SF1",
+	"source_table_id": "TPCH_SF1.SUPPLIER",
+	"source_table_name": "SUPPLIER",
+	"source_table_staging_id": "SUPPLIER",
+	"source_table_type_id": "TABLE",
+	"staging_table_comment": "",
+	"staging_table_display_string": "Supplier (TPCH_SF1) [TPC_R_SUPPLIER_U_TPCH_SF1]",
+	"staging_table_id": "STAGING.TPC_R_SUPPLIER_U_TPCH_SF1",
+	"staging_table_name": "Supplier",
+	"system_id": "TPC",
+	"where_clause_delta_part_template": "",
+	"where_clause_general_part": ""
+}

@@ -1,0 +1,19 @@
+{
+	"business_key_prefix": "",
+	"business_key_short": "S_NATIONKEY",
+	"column_ids": [
+		{
+			"column_id": "STAGING.TPC_R_SUPPLIER_U_TPCH_SF1.S_NATIONKEY",
+			"column_order": 1
+		}
+	],
+	"datavault_category_id": "raw_vault",
+	"hub_id": "H_NATION",
+	"hub_load_display_name": "TPC: SUPPLIER U TPCH SF1 (S_NATIONKEY)",
+	"hub_load_id": "H_NATION_S_TPC_R_SUPPLIER_U_TPCH_SF1",
+	"keys_are_prehashed": false,
+	"keys_are_unique": false,
+	"staging_table_id": "STAGING.TPC_R_SUPPLIER_U_TPCH_SF1",
+	"system_id": "TPC",
+	"system_name": "TPC"
+}

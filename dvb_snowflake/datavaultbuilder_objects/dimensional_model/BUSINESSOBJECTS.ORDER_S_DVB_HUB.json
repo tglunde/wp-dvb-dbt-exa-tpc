@@ -1,0 +1,131 @@
+{
+	"businessobject_comment": "",
+	"businessobject_display_name": "Order > Hub > Default",
+	"businessobject_dropdown_entry_string": "Order",
+	"businessobject_elements": [
+		{
+			"columns": [
+				{
+					"column_comment": "Business Key for Hub Order",
+					"column_id": "DATAVAULT.H_ORDER.ORDER_BK",
+					"column_name": "ORDER_BK",
+					"column_name_detail": "ORDER_BK",
+					"column_nq_id": "ORDER_BK",
+					"column_order": 1,
+					"column_orig_name": "ORDER_BK",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.H_ORDER.ORDER_H",
+					"column_name": "ORDER_HK",
+					"column_name_detail": "ORDER_H",
+					"column_nq_id": "ORDER_H",
+					"column_order": 2,
+					"column_orig_name": "ORDER_HK",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_ORDER\"}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.H_CUSTOMER.CUSTOMER_H",
+					"column_name": "CUSTOMER_HK",
+					"column_name_detail": "CUSTOMER_H",
+					"column_nq_id": "CUSTOMER_H",
+					"column_order": 3,
+					"column_orig_name": "CUSTOMER_HK",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_ORDER\",\"links\":[{\"link_id\":\"L_CUSTOMER_T_ORDER\",\"hubs\":[{\"hub_id\":\"H_CUSTOMER\"}]}]}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_ORDER_S_TPC_R_ORDERS_U_TPCH_SF1_C.O_TOTALPRICE",
+					"column_name": "O_TOTALPRICE",
+					"column_name_detail": "",
+					"column_nq_id": "O_TOTALPRICE",
+					"column_order": 4,
+					"column_orig_name": "O_TOTALPRICE",
+					"complete_data_type": "NUMBER(12,2)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_ORDER_S_TPC_R_ORDERS_U_TPCH_SF1_C.O_ORDERDATE",
+					"column_name": "O_ORDERDATE",
+					"column_name_detail": "",
+					"column_nq_id": "O_ORDERDATE",
+					"column_order": 5,
+					"column_orig_name": "O_ORDERDATE",
+					"complete_data_type": "DATE",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_ORDER_S_TPC_R_ORDERS_U_TPCH_SF1_C.O_ORDERPRIORITY",
+					"column_name": "O_ORDERPRIORITY",
+					"column_name_detail": "",
+					"column_nq_id": "O_ORDERPRIORITY",
+					"column_order": 6,
+					"column_orig_name": "O_ORDERPRIORITY",
+					"complete_data_type": "TEXT",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_ORDER_S_TPC_R_ORDERS_U_TPCH_SF1_C.O_CLERK",
+					"column_name": "O_CLERK",
+					"column_name_detail": "",
+					"column_nq_id": "O_CLERK",
+					"column_order": 7,
+					"column_orig_name": "O_CLERK",
+					"complete_data_type": "TEXT",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_ORDER_S_TPC_R_ORDERS_U_TPCH_SF1_C.O_SHIPPRIORITY",
+					"column_name": "O_SHIPPRIORITY",
+					"column_name_detail": "",
+					"column_nq_id": "O_SHIPPRIORITY",
+					"column_order": 8,
+					"column_orig_name": "O_SHIPPRIORITY",
+					"complete_data_type": "NUMBER(38,0)",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_ORDER\",\"satellites\":[{\"satellite_id\":\"S_ORDER_S_TPC_R_ORDERS_U_TPCH_SF1\"}]}]}}"
+		}
+	],
+	"businessobject_set_id": "businessobject_set_H_ORDER",
+	"businessobject_structure": null,
+	"businessobject_view_id": "BUSINESSOBJECTS.ORDER_S_DVB_HUB",
+	"dependent_objects": [
+		{
+			"object_id": "H_CUSTOMER",
+			"object_type": "hub"
+		},
+		{
+			"object_id": "H_ORDER",
+			"object_type": "hub"
+		},
+		{
+			"object_id": "L_CUSTOMER_T_ORDER",
+			"object_type": "link"
+		},
+		{
+			"object_id": "S_ORDER_S_TPC_R_ORDERS_U_TPCH_SF1",
+			"object_type": "satellite"
+		}
+	],
+	"granularity_satellite_id": null,
+	"system_id": "DVB_HUB",
+	"system_name": "Hub"
+}

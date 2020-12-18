@@ -1,0 +1,10 @@
+{
+	"hub_a_id": "H_CUSTOMER",
+	"hub_b_id": "H_ORDER",
+	"link_comment": "",
+	"link_id": "L_CUSTOMER_T_ORDER",
+	"link_subject_area_name": "TPCH",
+	"link_suffix_id": null,
+	"link_suffix_name": "",
+	"link_type": "one_to_many"
+}

@@ -1,0 +1,92 @@
+{
+	"businessobject_comment": "",
+	"businessobject_display_name": "Nation > Hub > Default",
+	"businessobject_dropdown_entry_string": "Nation",
+	"businessobject_elements": [
+		{
+			"columns": [
+				{
+					"column_comment": "Business Key for Hub Nation",
+					"column_id": "DATAVAULT.H_NATION.NATION_BK",
+					"column_name": "NATION_BK",
+					"column_name_detail": "NATION_BK",
+					"column_nq_id": "NATION_BK",
+					"column_order": 1,
+					"column_orig_name": "NATION_BK",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.H_NATION.NATION_H",
+					"column_name": "NATION_HK",
+					"column_name_detail": "NATION_H",
+					"column_nq_id": "NATION_H",
+					"column_order": 2,
+					"column_orig_name": "NATION_HK",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_NATION\"}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_NATION_S_TPC_R_NATION_U_TPCH_SF1_C.N_NAME",
+					"column_name": "N_NAME",
+					"column_name_detail": "",
+					"column_nq_id": "N_NAME",
+					"column_order": 3,
+					"column_orig_name": "N_NAME",
+					"complete_data_type": "TEXT",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_NATION\",\"satellites\":[{\"satellite_id\":\"S_NATION_S_TPC_R_NATION_U_TPCH_SF1\"}]}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_REGION_S_TPC_R_REGION_U_TPCH_SF1_C.R_NAME",
+					"column_name": "R_NAME",
+					"column_name_detail": "",
+					"column_nq_id": "R_NAME",
+					"column_order": 4,
+					"column_orig_name": "R_NAME",
+					"complete_data_type": "TEXT",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_NATION\",\"links\":[{\"link_id\":\"L_REGION_T_NATION\",\"hubs\":[{\"hub_id\":\"H_REGION\",\"satellites\":[{\"satellite_id\":\"S_REGION_S_TPC_R_REGION_U_TPCH_SF1\"}]}]}]}]}}"
+		}
+	],
+	"businessobject_set_id": "businessobject_set_H_NATION",
+	"businessobject_structure": null,
+	"businessobject_view_id": "BUSINESSOBJECTS.NATION_S_DVB_HUB",
+	"dependent_objects": [
+		{
+			"object_id": "H_NATION",
+			"object_type": "hub"
+		},
+		{
+			"object_id": "H_REGION",
+			"object_type": "hub"
+		},
+		{
+			"object_id": "L_REGION_T_NATION",
+			"object_type": "link"
+		},
+		{
+			"object_id": "S_NATION_S_TPC_R_NATION_U_TPCH_SF1",
+			"object_type": "satellite"
+		},
+		{
+			"object_id": "S_REGION_S_TPC_R_REGION_U_TPCH_SF1",
+			"object_type": "satellite"
+		}
+	],
+	"granularity_satellite_id": null,
+	"system_id": "DVB_HUB",
+	"system_name": "Hub"
+}

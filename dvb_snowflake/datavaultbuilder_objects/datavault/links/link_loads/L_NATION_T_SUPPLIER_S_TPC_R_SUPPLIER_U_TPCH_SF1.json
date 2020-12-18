@@ -1,0 +1,7 @@
+{
+	"link_id": "L_NATION_T_SUPPLIER",
+	"link_load_display_name": "Nation > TPC: SUPPLIER U TPCH SF1 (S_NATIONKEY) TO Supplier > TPC: SUPPLIER U TPCH SF1 (S_SUPPKEY)",
+	"link_load_id": "L_NATION_T_SUPPLIER_S_TPC_R_SUPPLIER_U_TPCH_SF1",
+	"staging_table_id": "STAGING.TPC_R_SUPPLIER_U_TPCH_SF1",
+	"system_id": "TPC"
+}

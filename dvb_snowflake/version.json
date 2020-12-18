@@ -1,0 +1,9 @@
+{
+	"dvb_version": {
+		"build": "0",
+		"client_db_type_id": "snowflake",
+		"major": 5,
+		"minor": 3,
+		"revision": 2
+	}
+}

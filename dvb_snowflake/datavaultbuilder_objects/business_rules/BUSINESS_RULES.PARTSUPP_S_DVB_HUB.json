@@ -1,0 +1,43 @@
+{
+	"accesslayer_priorization": 1,
+	"additional_deployment_parameters": {
+		"business_ruleset_hierarchy_level": 0
+	},
+	"business_rules_view_code": "Derived from column_nq_ids",
+	"business_ruleset_comment": "",
+	"business_ruleset_name": "Unaltered default",
+	"business_ruleset_order": 1,
+	"business_ruleset_suffix_id": null,
+	"business_ruleset_view_id": "BUSINESS_RULES.PARTSUPP_S_DVB_HUB",
+	"column_nq_ids": [
+		"N_NAME",
+		"PARTSUPP_BK",
+		"PARTSUPP_HK",
+		"P_BRAND",
+		"P_RETAILPRICE",
+		"PS_AVAILQTY",
+		"PS_NATION_HK",
+		"PS_SUPPLYCOST",
+		"S_ACCTBAL",
+		"S_ADDRESS",
+		"S_NAME"
+	],
+	"container_id": "H_PARTSUPP_C_dvb_default",
+	"dependent_objects": [
+		{
+			"object_id": "BUSINESSOBJECTS.PARTSUPP_S_DVB_HUB",
+			"object_type": "business_object"
+		}
+	],
+	"include_in_accesslayer": true,
+	"is_error_ruleset": false,
+	"is_unaltered_business_ruleset": true,
+	"quick_inserts": {
+		"quick_insert_list": [
+			{
+				"quick_insert_table_id": "BUSINESSOBJECTS.PARTSUPP_S_DVB_HUB"
+			}
+		]
+	},
+	"system_id": "DVB_HUB"
+}

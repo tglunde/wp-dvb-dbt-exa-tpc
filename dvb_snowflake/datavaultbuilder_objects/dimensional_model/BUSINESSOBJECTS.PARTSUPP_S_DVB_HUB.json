@@ -1,0 +1,207 @@
+{
+	"businessobject_comment": "",
+	"businessobject_display_name": "Partsupp > Hub > Default",
+	"businessobject_dropdown_entry_string": "Partsupp",
+	"businessobject_elements": [
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.H_PARTSUPP.PARTSUPP_H",
+					"column_name": "PARTSUPP_HK",
+					"column_name_detail": "PARTSUPP_H",
+					"column_nq_id": "PARTSUPP_H",
+					"column_order": 1,
+					"column_orig_name": "PARTSUPP_HK",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "Business Key for Hub Partsupp",
+					"column_id": "DATAVAULT.H_PARTSUPP.PARTSUPP_BK",
+					"column_name": "PARTSUPP_BK",
+					"column_name_detail": "PARTSUPP_BK",
+					"column_nq_id": "PARTSUPP_BK",
+					"column_order": 2,
+					"column_orig_name": "PARTSUPP_BK",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_PARTSUPP\"}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_SUPPLIER_S_TPC_R_SUPPLIER_U_TPCH_SF1_C.S_NAME",
+					"column_name": "S_NAME",
+					"column_name_detail": "",
+					"column_nq_id": "S_NAME",
+					"column_order": 3,
+					"column_orig_name": "S_NAME",
+					"complete_data_type": "TEXT",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_SUPPLIER_S_TPC_R_SUPPLIER_U_TPCH_SF1_C.S_ADDRESS",
+					"column_name": "S_ADDRESS",
+					"column_name_detail": "",
+					"column_nq_id": "S_ADDRESS",
+					"column_order": 4,
+					"column_orig_name": "S_ADDRESS",
+					"complete_data_type": "TEXT",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_SUPPLIER_S_TPC_R_SUPPLIER_U_TPCH_SF1_C.S_ACCTBAL",
+					"column_name": "S_ACCTBAL",
+					"column_name_detail": "",
+					"column_nq_id": "S_ACCTBAL",
+					"column_order": 5,
+					"column_orig_name": "S_ACCTBAL",
+					"complete_data_type": "NUMBER(12,2)",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_PARTSUPP\",\"links\":[{\"link_id\":\"L_SUPPLIER_T_PARTSUPP\",\"hubs\":[{\"hub_id\":\"H_SUPPLIER\",\"satellites\":[{\"satellite_id\":\"S_SUPPLIER_S_TPC_R_SUPPLIER_U_TPCH_SF1\"}]}]}]}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_PARTSUPP_S_TPC_R_PARTSUPP_U_TPCH_SF1_C.PS_AVAILQTY",
+					"column_name": "PS_AVAILQTY",
+					"column_name_detail": "",
+					"column_nq_id": "PS_AVAILQTY",
+					"column_order": 6,
+					"column_orig_name": "PS_AVAILQTY",
+					"complete_data_type": "NUMBER(38,0)",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_PARTSUPP_S_TPC_R_PARTSUPP_U_TPCH_SF1_C.PS_SUPPLYCOST",
+					"column_name": "PS_SUPPLYCOST",
+					"column_name_detail": "",
+					"column_nq_id": "PS_SUPPLYCOST",
+					"column_order": 7,
+					"column_orig_name": "PS_SUPPLYCOST",
+					"complete_data_type": "NUMBER(12,2)",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_PARTSUPP\",\"satellites\":[{\"satellite_id\":\"S_PARTSUPP_S_TPC_R_PARTSUPP_U_TPCH_SF1\"}]}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_NATION_S_TPC_R_NATION_U_TPCH_SF1_C.N_NAME",
+					"column_name": "N_NAME",
+					"column_name_detail": "",
+					"column_nq_id": "N_NAME",
+					"column_order": 8,
+					"column_orig_name": "N_NAME",
+					"complete_data_type": "TEXT",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_PARTSUPP\",\"links\":[{\"link_id\":\"L_SUPPLIER_T_PARTSUPP\",\"hubs\":[{\"hub_id\":\"H_SUPPLIER\",\"links\":[{\"link_id\":\"L_NATION_T_SUPPLIER\",\"hubs\":[{\"hub_id\":\"H_NATION\",\"satellites\":[{\"satellite_id\":\"S_NATION_S_TPC_R_NATION_U_TPCH_SF1\"}]}]}]}]}]}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_PART_S_TPC_R_PART_U_TPCH_SF1_C.P_BRAND",
+					"column_name": "P_BRAND",
+					"column_name_detail": "",
+					"column_nq_id": "P_BRAND",
+					"column_order": 9,
+					"column_orig_name": "P_BRAND",
+					"complete_data_type": "TEXT",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_PART_S_TPC_R_PART_U_TPCH_SF1_C.P_RETAILPRICE",
+					"column_name": "P_RETAILPRICE",
+					"column_name_detail": "",
+					"column_nq_id": "P_RETAILPRICE",
+					"column_order": 10,
+					"column_orig_name": "P_RETAILPRICE",
+					"complete_data_type": "NUMBER(12,2)",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_PARTSUPP\",\"links\":[{\"link_id\":\"L_PART_T_PARTSUPP\",\"hubs\":[{\"hub_id\":\"H_PART\",\"satellites\":[{\"satellite_id\":\"S_PART_S_TPC_R_PART_U_TPCH_SF1\"}]}]}]}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.H_NATION.NATION_H",
+					"column_name": "PS_NATION_HK",
+					"column_name_detail": "NATION_H",
+					"column_nq_id": "NATION_H",
+					"column_order": 11,
+					"column_orig_name": "PS_NATION_HK",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_PARTSUPP\",\"links\":[{\"link_id\":\"L_SUPPLIER_T_PARTSUPP\",\"hubs\":[{\"hub_id\":\"H_SUPPLIER\",\"links\":[{\"link_id\":\"L_NATION_T_SUPPLIER\",\"hubs\":[{\"hub_id\":\"H_NATION\"}]}]}]}]}]}}"
+		}
+	],
+	"businessobject_set_id": "businessobject_set_H_PARTSUPP",
+	"businessobject_structure": null,
+	"businessobject_view_id": "BUSINESSOBJECTS.PARTSUPP_S_DVB_HUB",
+	"dependent_objects": [
+		{
+			"object_id": "H_NATION",
+			"object_type": "hub"
+		},
+		{
+			"object_id": "H_PART",
+			"object_type": "hub"
+		},
+		{
+			"object_id": "H_PARTSUPP",
+			"object_type": "hub"
+		},
+		{
+			"object_id": "H_SUPPLIER",
+			"object_type": "hub"
+		},
+		{
+			"object_id": "L_NATION_T_SUPPLIER",
+			"object_type": "link"
+		},
+		{
+			"object_id": "L_PART_T_PARTSUPP",
+			"object_type": "link"
+		},
+		{
+			"object_id": "L_SUPPLIER_T_PARTSUPP",
+			"object_type": "link"
+		},
+		{
+			"object_id": "S_NATION_S_TPC_R_NATION_U_TPCH_SF1",
+			"object_type": "satellite"
+		},
+		{
+			"object_id": "S_PART_S_TPC_R_PART_U_TPCH_SF1",
+			"object_type": "satellite"
+		},
+		{
+			"object_id": "S_PARTSUPP_S_TPC_R_PARTSUPP_U_TPCH_SF1",
+			"object_type": "satellite"
+		},
+		{
+			"object_id": "S_SUPPLIER_S_TPC_R_SUPPLIER_U_TPCH_SF1",
+			"object_type": "satellite"
+		}
+	],
+	"granularity_satellite_id": null,
+	"system_id": "DVB_HUB",
+	"system_name": "Hub"
+}

@@ -1,0 +1,157 @@
+{
+	"businessobject_comment": "",
+	"businessobject_display_name": "Customer > Hub > Default",
+	"businessobject_dropdown_entry_string": "Customer",
+	"businessobject_elements": [
+		{
+			"columns": [
+				{
+					"column_comment": "Business Key for Hub Customer",
+					"column_id": "DATAVAULT.H_CUSTOMER.CUSTOMER_BK",
+					"column_name": "CUSTOMER_BK",
+					"column_name_detail": "CUSTOMER_BK",
+					"column_nq_id": "CUSTOMER_BK",
+					"column_order": 1,
+					"column_orig_name": "CUSTOMER_BK",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.H_CUSTOMER.CUSTOMER_H",
+					"column_name": "CUSTOMER_HK",
+					"column_name_detail": "CUSTOMER_H",
+					"column_nq_id": "CUSTOMER_H",
+					"column_order": 2,
+					"column_orig_name": "CUSTOMER_HK",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_CUSTOMER\"}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_REGION_S_TPC_R_REGION_U_TPCH_SF1_C.R_NAME",
+					"column_name": "R_NAME",
+					"column_name_detail": "",
+					"column_nq_id": "R_NAME",
+					"column_order": 3,
+					"column_orig_name": "R_NAME",
+					"complete_data_type": "TEXT",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_CUSTOMER\",\"links\":[{\"link_id\":\"L_NATION_T_CUSTOMER\",\"hubs\":[{\"hub_id\":\"H_NATION\",\"links\":[{\"link_id\":\"L_REGION_T_NATION\",\"hubs\":[{\"hub_id\":\"H_REGION\",\"satellites\":[{\"satellite_id\":\"S_REGION_S_TPC_R_REGION_U_TPCH_SF1\"}]}]}]}]}]}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_CUSTOMER_S_TPC_R_CUSTOMER_U_TPCH_SF1_C.C_NAME",
+					"column_name": "C_NAME",
+					"column_name_detail": "",
+					"column_nq_id": "C_NAME",
+					"column_order": 4,
+					"column_orig_name": "C_NAME",
+					"complete_data_type": "TEXT",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_CUSTOMER_S_TPC_R_CUSTOMER_U_TPCH_SF1_C.C_PHONE",
+					"column_name": "C_PHONE",
+					"column_name_detail": "",
+					"column_nq_id": "C_PHONE",
+					"column_order": 5,
+					"column_orig_name": "C_PHONE",
+					"complete_data_type": "TEXT",
+					"conversion_type": null
+				},
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_CUSTOMER_S_TPC_R_CUSTOMER_U_TPCH_SF1_C.C_MKTSEGMENT",
+					"column_name": "C_MKTSEGMENT",
+					"column_name_detail": "",
+					"column_nq_id": "C_MKTSEGMENT",
+					"column_order": 6,
+					"column_orig_name": "C_MKTSEGMENT",
+					"complete_data_type": "TEXT",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_CUSTOMER\",\"satellites\":[{\"satellite_id\":\"S_CUSTOMER_S_TPC_R_CUSTOMER_U_TPCH_SF1\"}]}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.S_NATION_S_TPC_R_NATION_U_TPCH_SF1_C.N_NAME",
+					"column_name": "N_NAME",
+					"column_name_detail": "",
+					"column_nq_id": "N_NAME",
+					"column_order": 7,
+					"column_orig_name": "N_NAME",
+					"complete_data_type": "TEXT",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_CUSTOMER\",\"links\":[{\"link_id\":\"L_NATION_T_CUSTOMER\",\"hubs\":[{\"hub_id\":\"H_NATION\",\"satellites\":[{\"satellite_id\":\"S_NATION_S_TPC_R_NATION_U_TPCH_SF1\"}]}]}]}]}}"
+		},
+		{
+			"columns": [
+				{
+					"column_comment": "",
+					"column_id": "DATAVAULT.H_NATION.NATION_H",
+					"column_name": "C_NATION_HK",
+					"column_name_detail": "NATION_H",
+					"column_nq_id": "NATION_H",
+					"column_order": 8,
+					"column_orig_name": "C_NATION_HK",
+					"conversion_type": null
+				}
+			],
+			"path_id": "{\"businessobject_path\":{\"hubs\":[{\"hub_id\":\"H_CUSTOMER\",\"links\":[{\"link_id\":\"L_NATION_T_CUSTOMER\",\"hubs\":[{\"hub_id\":\"H_NATION\"}]}]}]}}"
+		}
+	],
+	"businessobject_set_id": "businessobject_set_H_CUSTOMER",
+	"businessobject_structure": null,
+	"businessobject_view_id": "BUSINESSOBJECTS.CUSTOMER_S_DVB_HUB",
+	"dependent_objects": [
+		{
+			"object_id": "H_CUSTOMER",
+			"object_type": "hub"
+		},
+		{
+			"object_id": "H_NATION",
+			"object_type": "hub"
+		},
+		{
+			"object_id": "H_REGION",
+			"object_type": "hub"
+		},
+		{
+			"object_id": "L_NATION_T_CUSTOMER",
+			"object_type": "link"
+		},
+		{
+			"object_id": "L_REGION_T_NATION",
+			"object_type": "link"
+		},
+		{
+			"object_id": "S_CUSTOMER_S_TPC_R_CUSTOMER_U_TPCH_SF1",
+			"object_type": "satellite"
+		},
+		{
+			"object_id": "S_NATION_S_TPC_R_NATION_U_TPCH_SF1",
+			"object_type": "satellite"
+		},
+		{
+			"object_id": "S_REGION_S_TPC_R_REGION_U_TPCH_SF1",
+			"object_type": "satellite"
+		}
+	],
+	"granularity_satellite_id": null,
+	"system_id": "DVB_HUB",
+	"system_name": "Hub"
+}

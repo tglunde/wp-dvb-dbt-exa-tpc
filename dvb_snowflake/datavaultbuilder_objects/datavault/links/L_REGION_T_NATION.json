@@ -1,0 +1,10 @@
+{
+	"hub_a_id": "H_REGION",
+	"hub_b_id": "H_NATION",
+	"link_comment": "",
+	"link_id": "L_REGION_T_NATION",
+	"link_subject_area_name": "TPCH",
+	"link_suffix_id": null,
+	"link_suffix_name": "",
+	"link_type": "one_to_many"
+}

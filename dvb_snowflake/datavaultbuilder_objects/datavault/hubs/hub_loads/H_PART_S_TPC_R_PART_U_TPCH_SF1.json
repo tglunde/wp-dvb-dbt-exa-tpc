@@ -1,0 +1,19 @@
+{
+	"business_key_prefix": "",
+	"business_key_short": "P_PARTKEY",
+	"column_ids": [
+		{
+			"column_id": "STAGING.TPC_R_PART_U_TPCH_SF1.P_PARTKEY",
+			"column_order": 1
+		}
+	],
+	"datavault_category_id": "raw_vault",
+	"hub_id": "H_PART",
+	"hub_load_display_name": "TPC: PART U TPCH SF1 (P_PARTKEY)",
+	"hub_load_id": "H_PART_S_TPC_R_PART_U_TPCH_SF1",
+	"keys_are_prehashed": false,
+	"keys_are_unique": true,
+	"staging_table_id": "STAGING.TPC_R_PART_U_TPCH_SF1",
+	"system_id": "TPC",
+	"system_name": "TPC"
+}

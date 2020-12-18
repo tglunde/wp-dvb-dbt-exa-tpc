@@ -1,0 +1,7 @@
+{
+	"link_id": "L_REGION_T_NATION",
+	"link_load_display_name": "Region > TPC: NATION U TPCH SF1 (N_REGIONKEY) TO Nation > TPC: NATION U TPCH SF1 (N_NATIONKEY)",
+	"link_load_id": "L_REGION_T_NATION_S_TPC_R_NATION_U_TPCH_SF1",
+	"staging_table_id": "STAGING.TPC_R_NATION_U_TPCH_SF1",
+	"system_id": "TPC"
+}

@@ -1,0 +1,23 @@
+{
+	"business_key_prefix": "",
+	"business_key_short": "L_ORDERKEY, L_LINENUMBER",
+	"column_ids": [
+		{
+			"column_id": "STAGING.TPC_R_LINEITEM_U_TPCH_SF1.L_ORDERKEY",
+			"column_order": 1
+		},
+		{
+			"column_id": "STAGING.TPC_R_LINEITEM_U_TPCH_SF1.L_LINENUMBER",
+			"column_order": 2
+		}
+	],
+	"datavault_category_id": "raw_vault",
+	"hub_id": "H_LINEITEM",
+	"hub_load_display_name": "TPC: LINEITEM U TPCH SF1 (L_ORDERKEY, L_LINENUMBER)",
+	"hub_load_id": "H_LINEITEM_S_TPC_R_LINEITEM_U_TPCH_SF1",
+	"keys_are_prehashed": false,
+	"keys_are_unique": true,
+	"staging_table_id": "STAGING.TPC_R_LINEITEM_U_TPCH_SF1",
+	"system_id": "TPC",
+	"system_name": "TPC"
+}
