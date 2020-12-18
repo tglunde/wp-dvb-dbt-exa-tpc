@@ -4,7 +4,7 @@ services:
  core:
    env_file: .env
    environment:
-     - 'CLIENT_DB_CONNECTIONSTRING=jdbc:exa:192.168.1.103:8888'
+     - 'CLIENT_DB_CONNECTIONSTRING=jdbc:exa:52.236.150.243:8563'
      - CLIENT_DB_TYPE=exasol_client_db
      - ENABLE_BETA_FEATURES=false
      - 'USE_UNSECURE_DEFAULT_ENCRYPTION_KEYS=false'

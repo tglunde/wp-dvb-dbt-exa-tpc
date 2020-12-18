@@ -1,0 +1,15 @@
+- change business objects in dvb exasol to 
+1. load from hub instead of source system granularity
+2. have the same column name patterns as the snowflake versions
+
+- add missing business objects in dvb snowflake
+- dvb snowflake change source system to be on view-set like exasol
+
+- dbt source queries and profile definitions for exa and snowflake in order to switch targets
+vi dbt  -t TARGET, --target TARGET
+1. make the job name called in dvb configurable
+2. change snowflake loads to also refer to dbt schema 
+
+- dbt run queries should be common SQL for exasol and snowflake 
+- switch to table models
+
