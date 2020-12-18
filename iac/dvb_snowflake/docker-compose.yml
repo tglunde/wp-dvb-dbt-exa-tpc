@@ -4,8 +4,9 @@ services:
  core:
    env_file: .env
    environment:
-     - 'CLIENT_DB_CONNECTIONSTRING=jdbc:exa:192.168.1.103:8888'
-     - CLIENT_DB_TYPE=exasol_client_db
+     - 'CLIENT_DB_CONNECTIONSTRING=jdbc:snowflake://alligator.eu-central-1.snowflakecomputing.com/?db=DEV_GLUNDE&warehouse=WH_DEV&CLIENT_SESSION_KEEP_ALIVE=true&CLIENT_SESSION_KEEP_ALIVE_HEARTBEAT_FREQUENCY=900&CLIENT_METADATA_REQUEST_USE_CONNECTION_CTX=false&CLIENT_METADATA_USE_SESSION_DATABASE=true'
+     - SNOWFLAKE_DATABASE=DEV_GLUNDE
+     - CLIENT_DB_TYPE=snowflake_client_db
      - ENABLE_BETA_FEATURES=false
      - 'USE_UNSECURE_DEFAULT_ENCRYPTION_KEYS=false'
      - 'PLJAVA_VMOPTIONS=-Djava.security.egd=file:///dev/urandom -Xms128M -Xss2M'
@@ -33,9 +34,10 @@ services:
    env_file: .env
    environment:
      - CORE_POOL_MAX_CONNECTIONS=50
-     - CLIENTDB_POOL_MAX_CONNECTIONS=100
+     - CLIENTDB_POOL_MAX_CONNECTIONS=50
+     - CLIENTDB_POOL_CONNECTION_TIMEOUT_MS=3600000
      #- 'JAVA_OPTS=-Dnet.snowflake.jdbc.loggerImpl=net.snowflake.client.log.SLF4JLogger'
-     #- METRICS_PROVIDER=micrometer-prometheus
+     - METRICS_PROVIDER=micrometer-prometheus
    image: 'datavaultbuilder/connection_pool:${DVB_TAG}'
    volumes:
      - files:/files
@@ -58,7 +60,7 @@ services:
      - 'DAV_USER=dvb'
      - 'DAV_PASSWORD=start123'
      - DISABLE_IPV6=false
-   image: 'datavaultbuilder/webgui:${DVB_TAG}'
+   image: 'datavaultbuilder/webgui:rel_5.3.0.1_initial_install_only'
    ports:
      - '9998:80'
        #     - '443:443'
@@ -88,6 +90,8 @@ services:
    environment:
      - CONNECTION_POOL=30
    image: 'datavaultbuilder/api:${DVB_TAG}'
+   ports:
+     - '12334:12334'
    secrets:
      - authenticator_password
      - core_dbadmin_password    
@@ -105,7 +109,7 @@ services:
 
  grafana:
     environment:
-      - 'GF_SERVER_ROOT_URL=https://104.47.154.248/grafana'
+      - 'GF_SERVER_ROOT_URL=http://104.47.154.248:9998/grafana'
       #- 'GF_SECURITY_ADMIN_PASSWORD=someSecretPassword!'
       - GF_AUTH_ANONYMOUS_ENABLED=true
     image: datavaultbuilder/grafana:${DVB_TAG}
