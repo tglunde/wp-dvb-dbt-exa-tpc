@@ -3,8 +3,10 @@
 SELECT
 	sum(l_extendedprice * (1 - l_discount) ) AS revenue
 FROM
-	BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE,
-	BUSINESSOBJECTS.PART_S_EXA_STAGE
+	--BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE,
+	{{ source('accesslayer','lineitem')}},
+	--BUSINESSOBJECTS.PART_S_EXA_STAGE
+	{{ source('accesslayer','part')}}
 WHERE
 	( p_partkey = l_partkey
 	AND p_brand = 'Brand#12'

@@ -10,10 +10,14 @@ SELECT
 	c_phone,
 	c_comment
 FROM
-	BUSINESSOBJECTS.CUSTOMER_S_EXA_STAGE,
-	BUSINESSOBJECTS.ORDER_S_EXA_STAGE,
-	BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE,
-	BUSINESSOBJECTS.NATION_S_EXA_STAGE
+	--BUSINESSOBJECTS.CUSTOMER_S_EXA_STAGE,
+	{{ source('accesslayer','customer')}},
+	--BUSINESSOBJECTS.ORDER_S_EXA_STAGE,
+	{{ source('accesslayer','order')}},
+	--BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE,
+	{{ source('accesslayer','lineitem')}},
+	--BUSINESSOBJECTS.NATION_S_EXA_STAGE
+	{{ source('accesslayer','nation')}}
 WHERE
 	c_custkey = o_custkey
 	AND l_orderkey = o_orderkey

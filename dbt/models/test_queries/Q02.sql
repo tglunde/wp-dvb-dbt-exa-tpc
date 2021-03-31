@@ -10,11 +10,16 @@
 	s_phone,
 	s_comment
 FROM
-	BUSINESSOBJECTS.PART_S_EXA_STAGE,
-	BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE,
-	BUSINESSOBJECTS.PARTSUPP_S_EXA_STAGE,
-	BUSINESSOBJECTS.NATION_S_EXA_STAGE,
-	BUSINESSOBJECTS.REGION_S_EXA_STAGE
+	--BUSINESSOBJECTS.PART_S_EXA_STAGE,
+	{{ source('accesslayer','part')}},
+	--BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE,
+	{{ source('accesslayer','supplier')}},
+	--BUSINESSOBJECTS.PARTSUPP_S_EXA_STAGE,
+	{{ source('accesslayer','partsupp')}},
+	--BUSINESSOBJECTS.NATION_S_EXA_STAGE,
+	{{ source('accesslayer','nation')}},
+	--BUSINESSOBJECTS.REGION_S_EXA_STAGE
+	{{ source('accesslayer','region')}} 
 WHERE
 	p_partkey = ps_partkey
 	AND s_suppkey = ps_suppkey
@@ -27,7 +32,9 @@ WHERE
 	SELECT
 		min(ps_supplycost)
 	FROM
-		BUSINESSOBJECTS.PARTSUPP_S_EXA_STAGE, BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE, BUSINESSOBJECTS.NATION_S_EXA_STAGE, BUSINESSOBJECTS.REGION_S_EXA_STAGE
+		--BUSINESSOBJECTS.PARTSUPP_S_EXA_STAGE, BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE, BUSINESSOBJECTS.NATION_S_EXA_STAGE, BUSINESSOBJECTS.REGION_S_EXA_STAGE
+		{{ source('accesslayer','partsupp')}}, {{ source('accesslayer','supplier')}}, {{ source('accesslayer','nation')}}, {{ source('accesslayer','region')}}
+
 	WHERE
 		p_partkey = ps_partkey
 		AND s_suppkey = ps_suppkey

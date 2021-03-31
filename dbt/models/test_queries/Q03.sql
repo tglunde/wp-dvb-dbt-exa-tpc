@@ -6,9 +6,12 @@
 	o_orderdate,
 	o_shippriority
 FROM
-	BUSINESSOBJECTS.CUSTOMER_S_EXA_STAGE,
-	BUSINESSOBJECTS.ORDER_S_EXA_STAGE,
-	BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE
+	--BUSINESSOBJECTS.CUSTOMER_S_EXA_STAGE,
+	{{ source('accesslayer','customer')}},
+	--BUSINESSOBJECTS.ORDER_S_EXA_STAGE,
+	{{ source('accesslayer','order')}},
+	--BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE
+	{{ source('accesslayer','lineitem')}}
 WHERE
 	c_mktsegment = 'BUILDING'
 	AND c_custkey = o_custkey

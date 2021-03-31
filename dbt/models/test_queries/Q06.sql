@@ -3,7 +3,8 @@
 SELECT
 	sum(l_extendedprice*l_discount) AS revenue
 FROM
-	BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE
+	--BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE
+	{{ source('accesslayer','lineitem')}}
 WHERE
 	l_shipdate >= DATE '1994-01-01'
 	AND l_shipdate < DATE '1994-01-01' + INTERVAL '1' YEAR

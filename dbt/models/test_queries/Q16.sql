@@ -6,8 +6,10 @@ SELECT
 	p_size,
 	count(DISTINCT ps_suppkey) AS supplier_cnt
 FROM
-	BUSINESSOBJECTS.PARTSUPP_S_EXA_STAGE,
-	BUSINESSOBJECTS.PART_S_EXA_STAGE
+	--BUSINESSOBJECTS.PARTSUPP_S_EXA_STAGE,
+	{{ source('accesslayer','partsupp')}},
+	--BUSINESSOBJECTS.PART_S_EXA_STAGE
+	{{ source('accesslayer','part')}}
 WHERE
 	p_partkey = ps_partkey
 	AND p_brand <> 'Brand#45'
@@ -24,7 +26,8 @@ WHERE
 	SELECT
 		s_suppkey
 	FROM
-		BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE
+		--BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE
+		{{ source('accesslayer','supplier')}}
 	WHERE
 		s_comment LIKE '%Customer%Complaints%' )
 GROUP BY

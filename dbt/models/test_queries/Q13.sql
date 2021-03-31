@@ -8,8 +8,10 @@ FROM
 	SELECT
 		c_custkey, count(o_orderkey)
 	FROM
-		BUSINESSOBJECTS.CUSTOMER_S_EXA_STAGE
-	LEFT OUTER JOIN BUSINESSOBJECTS.ORDER_S_EXA_STAGE ON
+		--BUSINESSOBJECTS.CUSTOMER_S_EXA_STAGE
+		{{ source('accesslayer','customer')}}
+	--LEFT OUTER JOIN BUSINESSOBJECTS.ORDER_S_EXA_STAGE ON
+	LEFT OUTER JOIN {{ source('accesslayer','order')}} ON
 		c_custkey = o_custkey
 		AND o_comment NOT LIKE '%special%requests%'
 	GROUP BY

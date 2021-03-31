@@ -5,7 +5,8 @@ WITH tpch_res AS (
 	l_suppkey AS supplier_no,
 	sum(l_extendedprice * (1 - l_discount)) AS total_revenue
 FROM
-	BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE
+	--BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE
+	{{ source('accesslayer','lineitem')}}
 WHERE
 	l_shipdate >= DATE '1996-01-01'
 	AND l_shipdate < DATE '1996-01-01' + INTERVAL '3' MONTH
@@ -19,7 +20,8 @@ SELECT
 	s_phone,
 	total_revenue
 FROM
-	BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE,
+	--BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE,
+	{{ source('accesslayer','supplier')}},
 	tpch_res
 WHERE
 	s_suppkey = supplier_no

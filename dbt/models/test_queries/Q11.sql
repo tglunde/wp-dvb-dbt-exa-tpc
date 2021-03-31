@@ -4,9 +4,12 @@
 	ps_partkey,
 	sum(ps_supplycost * ps_availqty) AS valuee
 FROM
-	BUSINESSOBJECTS.PARTSUPP_S_EXA_STAGE,
-	BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE,
-	BUSINESSOBJECTS.NATION_S_EXA_STAGE
+	--BUSINESSOBJECTS.PARTSUPP_S_EXA_STAGE,
+	{{ source('accesslayer','partsupp')}},
+	--BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE,
+	{{ source('accesslayer','supplier')}},
+	--BUSINESSOBJECTS.NATION_S_EXA_STAGE
+	{{ source('accesslayer','nation')}}
 WHERE
 	ps_suppkey = s_suppkey
 	AND s_nationkey = n_nationkey

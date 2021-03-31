@@ -11,7 +11,8 @@ FROM
 	FROM
 		o_orderdate) AS o_year, l_extendedprice * (1 - l_discount) - ps_supplycost * l_quantity AS amount
 	FROM
-		BUSINESSOBJECTS.PART_S_EXA_STAGE, BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE, BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE, BUSINESSOBJECTS.PARTSUPP_S_EXA_STAGE, BUSINESSOBJECTS.ORDER_S_EXA_STAGE, BUSINESSOBJECTS.NATION_S_EXA_STAGE
+		-- BUSINESSOBJECTS.PART_S_EXA_STAGE, BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE, BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE, BUSINESSOBJECTS.PARTSUPP_S_EXA_STAGE, BUSINESSOBJECTS.ORDER_S_EXA_STAGE, BUSINESSOBJECTS.NATION_S_EXA_STAGE
+		{{ source('accesslayer','part')}}, {{ source('accesslayer','supplier')}}, {{ source('accesslayer','lineitem')}}, {{ source('accesslayer','partsupp')}}, {{ source('accesslayer','order')}}, {{ source('accesslayer','nation')}}
 	WHERE
 		s_suppkey = l_suppkey
 		AND ps_suppkey = l_suppkey

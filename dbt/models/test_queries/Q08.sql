@@ -10,7 +10,9 @@ FROM
 	FROM
 		o_orderdate) AS o_year, l_extendedprice * (1-l_discount) AS volume, n2.n_name AS nation
 	FROM
-		BUSINESSOBJECTS.PART_S_EXA_STAGE, BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE, BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE, BUSINESSOBJECTS.ORDER_S_EXA_STAGE, BUSINESSOBJECTS.CUSTOMER_S_EXA_STAGE, BUSINESSOBJECTS.NATION_S_EXA_STAGE n1, BUSINESSOBJECTS.NATION_S_EXA_STAGE n2, BUSINESSOBJECTS.REGION_S_EXA_STAGE
+		--BUSINESSOBJECTS.PART_S_EXA_STAGE, BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE, BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE, BUSINESSOBJECTS.ORDER_S_EXA_STAGE, BUSINESSOBJECTS.CUSTOMER_S_EXA_STAGE, BUSINESSOBJECTS.NATION_S_EXA_STAGE n1, BUSINESSOBJECTS.NATION_S_EXA_STAGE n2, BUSINESSOBJECTS.REGION_S_EXA_STAGE
+		{{ source('accesslayer','part')}}, {{ source('accesslayer','supplier')}}, {{ source('accesslayer','lineitem')}}, {{ source('accesslayer','order')}}, {{ source('accesslayer','customer')}}, {{ source('accesslayer','nation')}} n1, {{ source('accesslayer','nation')}} n2, {{ source('accesslayer','region')}}
+
 	WHERE
 		p_partkey = l_partkey
 		AND s_suppkey = l_suppkey

@@ -9,7 +9,8 @@ FROM
 	SELECT
 		SUBSTRING(c_phone FROM 1 FOR 2) AS cntrycode, c_acctbal
 	FROM
-		BUSINESSOBJECTS.CUSTOMER_S_EXA_STAGE
+		--BUSINESSOBJECTS.CUSTOMER_S_EXA_STAGE
+		{{ source('accesslayer','customer')}}
 	WHERE
 		SUBSTRING(c_phone FROM 1 FOR 2) IN ('13',
 		'31',
@@ -22,7 +23,8 @@ FROM
 		SELECT
 			avg(c_acctbal)
 		FROM
-			BUSINESSOBJECTS.CUSTOMER_S_EXA_STAGE
+			--BUSINESSOBJECTS.CUSTOMER_S_EXA_STAGE
+			{{ source('accesslayer','customer')}}
 		WHERE
 			c_acctbal > 0.00
 			AND SUBSTRING (c_phone
@@ -38,7 +40,8 @@ FROM
 		SELECT
 			*
 		FROM
-			BUSINESSOBJECTS.ORDER_S_EXA_STAGE
+			--BUSINESSOBJECTS.ORDER_S_EXA_STAGE
+			{{ source('accesslayer','order')}}
 		WHERE
 			o_custkey = c_custkey ) ) AS custsale
 GROUP BY

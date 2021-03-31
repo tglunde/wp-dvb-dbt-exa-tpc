@@ -5,8 +5,10 @@ SELECT
 	sum(CASE WHEN o_orderpriority = '1-URGENT' OR o_orderpriority = '2-HIGH' THEN 1 ELSE 0 END) AS high_line_count,
 	sum(CASE WHEN o_orderpriority <> '1-URGENT' AND o_orderpriority <> '2-HIGH' THEN 1 ELSE 0 END) AS low_line_count
 FROM
-	BUSINESSOBJECTS.ORDER_S_EXA_STAGE,
-	BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE
+	--BUSINESSOBJECTS.ORDER_S_EXA_STAGE,
+	{{ source('accesslayer','order')}},
+	--BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE
+	{{ source('accesslayer','lineitem')}}
 WHERE
 	o_orderkey = l_orderkey
 	AND l_shipmode IN ('MAIL',

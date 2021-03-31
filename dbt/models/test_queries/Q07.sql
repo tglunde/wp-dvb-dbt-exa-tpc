@@ -12,7 +12,8 @@ FROM
 	FROM
 		l_shipdate) AS l_year, l_extendedprice * (1 - l_discount) AS volume
 	FROM
-		BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE, BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE, BUSINESSOBJECTS.ORDER_S_EXA_STAGE, BUSINESSOBJECTS.CUSTOMER_S_EXA_STAGE, BUSINESSOBJECTS.NATION_S_EXA_STAGE n1, BUSINESSOBJECTS.NATION_S_EXA_STAGE n2
+		--BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE, BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE, BUSINESSOBJECTS.ORDER_S_EXA_STAGE, BUSINESSOBJECTS.CUSTOMER_S_EXA_STAGE, BUSINESSOBJECTS.NATION_S_EXA_STAGE n1, BUSINESSOBJECTS.NATION_S_EXA_STAGE n2
+		{{ source('accesslayer','supplier')}}, {{ source('accesslayer','lineitem')}}, {{ source('accesslayer','order')}}, {{ source('accesslayer','customer')}}, {{ source('accesslayer','nation')}} n1, {{ source('accesslayer','nation')}} n2
 	WHERE
 		s_suppkey = l_suppkey
 		AND o_orderkey = l_orderkey

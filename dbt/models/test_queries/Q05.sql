@@ -4,12 +4,18 @@ SELECT
 	n_name,
 	sum(l_extendedprice * (1 - l_discount)) AS revenue
 FROM
-	BUSINESSOBJECTS.CUSTOMER_S_EXA_STAGE,
-	BUSINESSOBJECTS.ORDER_S_EXA_STAGE,
-	BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE,
-	BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE,
-	BUSINESSOBJECTS.NATION_S_EXA_STAGE,
-	BUSINESSOBJECTS.REGION_S_EXA_STAGE
+	--BUSINESSOBJECTS.CUSTOMER_S_EXA_STAGE,
+	{{ source('accesslayer','customer')}},
+	--BUSINESSOBJECTS.ORDER_S_EXA_STAGE,
+	{{ source('accesslayer','order')}},
+	--BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE,
+	{{ source('accesslayer','lineitem')}},
+	--BUSINESSOBJECTS.SUPPLIER_S_EXA_STAGE,
+	{{ source('accesslayer','supplier')}},
+	--BUSINESSOBJECTS.NATION_S_EXA_STAGE,
+	{{ source('accesslayer','nation')}},
+	--BUSINESSOBJECTS.REGION_S_EXA_STAGE
+	{{ source('accesslayer','region')}}
 WHERE
 	c_custkey = o_custkey
 	AND l_orderkey = o_orderkey

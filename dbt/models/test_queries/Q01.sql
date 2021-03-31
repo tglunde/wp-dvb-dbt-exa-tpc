@@ -12,7 +12,8 @@
 	avg(l_discount) AS avg_disc,
 	count(*) AS count_order
 FROM
-	BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE
+	--BUSINESSOBJECTS.LINEITEM_S_EXA_STAGE
+	{{ source('accesslayer','lineitem')}}
 WHERE
 	l_shipdate <= DATE '1998-12-01' - INTERVAL '90' DAY (3)
 GROUP BY
